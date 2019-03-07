@@ -11,6 +11,15 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import './layout.css'
+import styled from 'styled-components'
+import { COLORS, GlobalStyle } from '../lib/primitives'
+
+const Page = styled.div`
+  background: ${COLORS.BACKGROUND};
+  min-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -24,7 +33,8 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <Page>
+        <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -41,7 +51,7 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </>
+      </Page>
     )}
   />
 )
