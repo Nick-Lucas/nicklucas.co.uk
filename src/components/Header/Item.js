@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { COLORS } from 'lib/styles'
+import { Icon } from 'lib/Icon'
 
 const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 
   border-left: solid;
   border-left-color: ${COLORS.BACKGROUND};
@@ -23,13 +24,14 @@ const Text = styled.h3`
   margin: 0;
 `
 
-export const Item = ({ label, url }) => (
+export const Item = ({ label, url, icon }) => (
   <StyledLink
     to={url}
     style={{
       textDecoration: `none`,
     }}
   >
+    {icon && <Icon icon={icon} />}
     <Text>{label}</Text>
   </StyledLink>
 )
@@ -37,4 +39,5 @@ export const Item = ({ label, url }) => (
 Item.propTypes = {
   label: PropTypes.string,
   url: PropTypes.string,
+  icon: PropTypes.string,
 }

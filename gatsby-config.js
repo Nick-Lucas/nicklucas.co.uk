@@ -35,7 +35,10 @@ module.exports = {
         fonts: [
           `open sans`,
           `roboto`,
-          `source sans pro`, // you can also specify font weights and styles
+          `source sans pro`,
+
+          // https://medium.com/@joshuacrass/material-icon-font-with-gatsby-af620c46c041
+          'material icons',
         ],
       },
     },

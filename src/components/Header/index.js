@@ -17,9 +17,9 @@ const HeaderComponent = ({ title }) => (
   <Container>
     <Title siteTitle={title} />
 
-    <Item label="Blog" url="/blog" />
-    <Item label="Projects" url="/projects" />
-    <Item label="Past Roles" url="/roles" />
+    <Item icon="attach_file" label="Blog" url="/blog" />
+    <Item icon="view_carousel" label="Projects" url="/projects" />
+    <Item icon="work" label="Past Roles" url="/roles" />
   </Container>
 )
 
