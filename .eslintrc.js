@@ -1,7 +1,8 @@
 module.exports = {
     plugins: [
         "react", 
-        "prettier"
+        "prettier",
+        "import"
     ],
     extends: [
         "eslint:recommended", 
@@ -13,7 +14,10 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 8
     },
-    rules: {},
+    rules: {
+        "no-restricted-imports": [2, { "patterns": ["../*"] }], 
+        "no-restricted-modules": [2, { "patterns": ["../*"] }]
+    },
     globals: {
         __dirname: "readonly",
         module: "readonly"

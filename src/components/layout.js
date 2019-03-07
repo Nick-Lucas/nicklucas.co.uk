@@ -12,7 +12,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import './layout.css'
 import styled from 'styled-components'
-import { COLORS, GlobalStyle } from '../lib/primitives'
+import { COLORS, GlobalStyle } from 'lib/primitives'
 
 const Page = styled.div`
   background: ${COLORS.BACKGROUND};
