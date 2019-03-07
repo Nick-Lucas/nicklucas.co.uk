@@ -2,7 +2,8 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const COLORS = {
-  BACKGROUND: '#49483E',
+  BACKGROUND: '#272822',
+  TINT: '#49483E',
   GREY: '#75715e',
   BLUE: '#66d9ef',
   PURPLE: '#ae81ff',
@@ -13,8 +14,11 @@ export const COLORS = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+
   html {
-    font-family: sans-serif;
+    font-family: 'Open Sans';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
