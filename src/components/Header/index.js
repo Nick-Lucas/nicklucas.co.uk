@@ -16,7 +16,10 @@ const Container = styled.div`
 const HeaderComponent = ({ title }) => (
   <Container>
     <Title siteTitle={title} />
+
     <Item label="Blog" url="/blog" />
+    <Item label="Projects" url="/projects" />
+    <Item label="Past Roles" url="/roles" />
   </Container>
 )
 

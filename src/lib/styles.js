@@ -14,11 +14,9 @@ export const COLORS = {
 }
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-
   html {
-    font-family: 'Open Sans';
+    font-family: 'Source Sans Pro';
+    font-weight: 500;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -33,5 +31,14 @@ export const GlobalStyle = createGlobalStyle`
   /* Text setup */
   * {
     color: ${COLORS.WHITE};
+  }
+  h1 {
+    font-weight: 500;
+  }
+  h2 {
+    font-weight: 500;
+  }
+  h3 {
+    font-weight: 500;
   }
 `

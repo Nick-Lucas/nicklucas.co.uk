@@ -29,6 +29,16 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-resolve-src`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `open sans`,
+          `roboto`,
+          `source sans pro`, // you can also specify font weights and styles
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
