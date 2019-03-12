@@ -32,7 +32,7 @@ const Body = styled.div`
   margin: 0 auto;
   padding: 1rem;
 
-  ${SHADOWS.LOW}
+  /* ${SHADOWS.LOW} */
 `
 
 const Layout = ({ children }) => (
