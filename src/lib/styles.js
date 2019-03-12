@@ -2,15 +2,34 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const COLORS = {
-  BACKGROUND: '#272822',
-  TINT: '#49483E',
+  DARK: '#272822',
+  DARK_TINT: '#49483E',
   GREY: '#75715e',
-  BLUE: '#66d9ef',
-  PURPLE: '#ae81ff',
-  WHITE: '#f8f8f2',
-  RED: '#f92672',
+  BLUE: '#16b1d0',
+  PURPLE: '#9c66ff',
+  PALE_WHITE: '#d2d0c6',
+  WHITE: '#ffffff',
+  RED: '#f9065f',
   RED_DARK: '#960050',
-  YELLOW: '#e6db74',
+  YELLOW: '#c3b322',
+}
+
+export const SHADOWS = {
+  LOW: `
+    -webkit-box-shadow: 2px 2px 5px 0px #999999;
+    -moz-box-shadow: 2px 2px 5px 0px #999999;
+    box-shadow: 2px 2px 5px 0px #999999;
+  `,
+  MEDIUM: `
+    -webkit-box-shadow: 4px 4px 10px 0px #999999;
+    -moz-box-shadow: 4px 4px 10px 0px #999999;
+    box-shadow: 4px 4px 10px 0px #999999;  
+  `,
+  HIGH: `
+    -webkit-box-shadow: 6px 6px 20px 0px #999999;
+    -moz-box-shadow: 6px 6px 20px 0px #999999;
+    box-shadow: 6px 6px 20px 0px #999999;  
+  `,
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -22,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${COLORS.BACKGROUND};
+    background: ${COLORS.WHITE};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,15 +49,45 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Text setup */
   * {
-    color: ${COLORS.WHITE};
+    color: ${COLORS.DARK};
+    flex-direction: column;
   }
   h1 {
     font-weight: 500;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    color: ${COLORS.BLUE};
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
   }
   h2 {
     font-weight: 500;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    color: ${COLORS.PURPLE};
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
   }
   h3 {
     font-weight: 500;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    color: ${COLORS.YELLOW};
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+  }
+  h4 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  h5 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin: 0;
   }
 `

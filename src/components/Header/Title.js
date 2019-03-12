@@ -11,7 +11,7 @@ const Container = styled.div`
 
 export const Title = ({ siteTitle }) => (
   <Container>
-    <h1 style={{ margin: 0 }}>
+    <h1 style={{ margin: 0, borderBottom: 'none' }}>
       <Link
         to="/"
         style={{
