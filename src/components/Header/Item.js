@@ -10,10 +10,6 @@ const StyledLink = styled(Link)`
   align-items: center;
   padding: 0.5rem 1rem;
 
-  border-left: solid;
-  border-left-color: ${COLORS.DARK};
-  border-left-width: 1px;
-
   :hover {
     background: ${COLORS.PALE_WHITE};
     transition: 0.3s;

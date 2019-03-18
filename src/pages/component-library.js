@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from 'components/layout'
 import { Card } from 'lib/Card'
+import { Button } from 'lib/Button'
 
 const ComponentLibrary = () => (
   <Layout>
@@ -33,6 +34,11 @@ const ComponentLibrary = () => (
       </p>
     </Card>
     <Link to="/">Link back to the homepage</Link>
+
+    <br />
+
+    <Button type="Primary">Primary Button</Button>
+    <Button type="Secondary">Secondary Button</Button>
   </Layout>
 )
 

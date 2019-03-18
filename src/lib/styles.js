@@ -69,15 +69,18 @@ export const GlobalStyle = createGlobalStyle`
     color: ${COLORS.PURPLE};
     border-bottom-style: solid;
     border-bottom-width: 0.1rem;
+    display: table;
   }
   h3 {
+    font-size: 1.3rem;
     font-weight: 500;
     margin: 0;
     margin-bottom: 0.5rem;
 
     color: ${COLORS.YELLOW};
-    border-bottom-style: solid;
-    border-bottom-width: 0.1rem;
+    /* border-bottom-style: solid;
+    border-bottom-width: 0.1rem; */
+    /* display: table; */
   }
   h4 {
     margin: 0;
@@ -89,5 +92,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   p {
     margin: 0;
+  }
+  button {
+    font-size: 1rem;
+    cursor: pointer;
   }
 `
