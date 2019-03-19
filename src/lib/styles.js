@@ -78,9 +78,6 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 0.5rem;
 
     color: ${COLORS.YELLOW};
-    /* border-bottom-style: solid;
-    border-bottom-width: 0.1rem; */
-    /* display: table; */
   }
   h4 {
     margin: 0;
