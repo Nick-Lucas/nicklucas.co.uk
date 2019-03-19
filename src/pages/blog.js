@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 
 import Layout from 'components/layout'
-import { PostButton } from './PostButton'
+import { PostButton } from 'components/blog/PostButton'
 
 export default () => {
   return (
