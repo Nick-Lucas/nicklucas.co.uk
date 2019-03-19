@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
   padding: 0.5rem 1rem;
 
   :hover {
-    background: ${COLORS.PALE_WHITE};
+    background: ${COLORS.OFF_WHITE};
     transition: 0.3s;
   }
 `

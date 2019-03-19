@@ -9,8 +9,8 @@ const IconBase = styled.span`
   padding-top: 0.1rem;
 `
 
-export const Icon = ({ icon }) => {
-  return <IconBase>{icon}</IconBase>
+export const Icon = ({ icon, ...props }) => {
+  return <IconBase {...props}>{icon}</IconBase>
 }
 
 Icon.propTypes = {

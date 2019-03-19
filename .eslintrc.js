@@ -4,6 +4,9 @@ module.exports = {
         "prettier",
         "import"
     ],
+    env: {
+        es6: true
+    },
     extends: [
         "eslint:recommended", 
         "plugin:react/recommended", 
@@ -16,7 +19,9 @@ module.exports = {
     },
     rules: {
         "no-restricted-imports": [2, { "patterns": ["../*"] }], 
-        "no-restricted-modules": [2, { "patterns": ["../*"] }]
+        "no-restricted-modules": [2, { "patterns": ["../*"] }],
+        "no-useless-escape": "off",
+        "react/display-name": "off"
     },
     globals: {
         __dirname: "readonly",
@@ -24,7 +29,7 @@ module.exports = {
     },
     "settings": {
         "react": {
-          "version": "detect"
+            "version": "detect"
         },
-      }
+    }
 }

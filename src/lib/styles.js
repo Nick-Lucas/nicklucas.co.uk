@@ -9,27 +9,36 @@ export const COLORS = {
   PURPLE: '#9c66ff',
   PALE_WHITE: '#d2d0c6',
   WHITE: '#ffffff',
+  OFF_WHITE: '#efefef',
   RED: '#f9065f',
   RED_DARK: '#960050',
   YELLOW: '#c3b322',
 }
 
+const generateShadow = ({
+  distance = 2,
+  blur = 5,
+  spread = 0,
+  colour = '#999999',
+}) => `
+  -webkit-box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
+  -moz-box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
+  box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
+`
+
 export const SHADOWS = {
-  LOW: `
-    -webkit-box-shadow: 2px 2px 5px 0px #999999;
-    -moz-box-shadow: 2px 2px 5px 0px #999999;
-    box-shadow: 2px 2px 5px 0px #999999;
-  `,
-  MEDIUM: `
-    -webkit-box-shadow: 4px 4px 10px 0px #999999;
-    -moz-box-shadow: 4px 4px 10px 0px #999999;
-    box-shadow: 4px 4px 10px 0px #999999;  
-  `,
-  HIGH: `
-    -webkit-box-shadow: 6px 6px 20px 0px #999999;
-    -moz-box-shadow: 6px 6px 20px 0px #999999;
-    box-shadow: 6px 6px 20px 0px #999999;  
-  `,
+  LOW: generateShadow({
+    distance: 1,
+    blur: 3,
+  }),
+  MEDIUM: generateShadow({
+    distance: 4,
+    blur: 10,
+  }),
+  HIGH: generateShadow({
+    distance: 6,
+    blur: 20,
+  }),
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -78,9 +87,6 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 0.5rem;
 
     color: ${COLORS.YELLOW};
-    /* border-bottom-style: solid;
-    border-bottom-width: 0.1rem; */
-    /* display: table; */
   }
   h4 {
     margin: 0;
