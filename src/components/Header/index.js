@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Title } from './Title'
 import { StaticQuery, graphql } from 'gatsby'
-import { COLORS, SHADOWS } from 'lib/styles'
+import { COLORS } from 'lib/styles'
 import { Item } from './Item'
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  background: ${COLORS.BLUE};
+  /* background: ${COLORS.BLUE}; */
   padding: 0 2rem;
-  /* margin-bottom: 1rem; */
 
-  ${SHADOWS.MEDIUM}
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: ${COLORS.PALE_WHITE};
 `
 
 const HeaderComponent = ({ title }) => (

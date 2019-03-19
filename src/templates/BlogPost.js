@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Rehype from 'rehype-react'
+import { Helmet } from 'react-helmet'
+
 import { Card } from 'lib/Card'
 import Layout from 'components/layout'
 
 export const pageQuery = graphql`
-  query {
-    markdownRemark {
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
@@ -24,13 +26,14 @@ const render = new Rehype({
 }).Compiler
 
 const Template = ({ data }) => {
-  const { frontmatter, htmlAst, tableOfContents } = data.markdownRemark
+  const { frontmatter, htmlAst } = data.markdownRemark
 
   return (
     <Layout>
-      <div>{tableOfContents}</div>
-      {/* <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2> */}
+      <Helmet>
+        <title>{frontmatter.title}</title>
+      </Helmet>
+
       {render(htmlAst)}
     </Layout>
   )

@@ -2,6 +2,7 @@
 title: Test Publication 1
 date: 2019-01-01
 path: /blog/001-test
+summary: 'An initial test post'
 ---
 
 # Thing 1

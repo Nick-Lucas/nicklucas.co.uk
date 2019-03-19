@@ -13,8 +13,8 @@ import styled from 'styled-components'
 import { GlobalStyle, SHADOWS } from 'lib/styles'
 
 const Page = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: block;
+  /* flex-direction: column; */
 
   min-height: 100vh;
   min-width: 100vw;
@@ -26,7 +26,6 @@ const Body = styled.div`
   flex-direction: column;
   flex: 1;
 
-  width: 50rem;
   max-width: 50rem;
 
   margin: 0 auto;

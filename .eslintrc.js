@@ -20,7 +20,8 @@ module.exports = {
     rules: {
         "no-restricted-imports": [2, { "patterns": ["../*"] }], 
         "no-restricted-modules": [2, { "patterns": ["../*"] }],
-        "no-useless-escape": "off"
+        "no-useless-escape": "off",
+        "react/display-name": "off"
     },
     globals: {
         __dirname: "readonly",
