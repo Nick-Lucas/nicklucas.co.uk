@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Rehype from 'rehype-react'
+import { Card } from 'lib/Card'
+import Layout from 'components/layout'
 
 export const pageQuery = graphql`
   query {
     markdownRemark {
-      html
+      htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
@@ -15,20 +18,20 @@ export const pageQuery = graphql`
   }
 `
 
+const render = new Rehype({
+  createElement: React.createElement,
+  components: { h1: Card },
+}).Compiler
+
 const Template = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, htmlAst } = data.markdownRemark
 
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
-    </div>
+    <Layout>
+      <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.date}</h2>
+      {render(htmlAst)}
+    </Layout>
   )
 }
 

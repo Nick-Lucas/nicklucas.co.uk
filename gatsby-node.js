@@ -13,7 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
-        filter: { fileAbsolutePath: { regex: ".*/posts/.*md$/" } }
+        filter: { fileAbsolutePath: { regex: "/posts/.*md$/" } }
       ) {
         edges {
           node {
@@ -32,7 +32,8 @@ exports.createPages = ({ actions, graphql }) => {
     console.log(
       'Found',
       result.data.allMarkdownRemark.edges.length,
-      'blog posts'
+      'blog posts:',
+      JSON.stringify(result.data.allMarkdownRemark.edges)
     )
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
