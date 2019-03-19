@@ -9,7 +9,7 @@ import { Item } from './Item'
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  background: ${COLORS.WHITE};
+  background: ${COLORS.BLUE};
   padding: 0 2rem;
   /* margin-bottom: 1rem; */
 

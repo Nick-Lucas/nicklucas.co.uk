@@ -6,6 +6,13 @@ const path = require('path')
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
+  // Create blogs index
+  const BlogPostsTemplate = path.resolve(`src/templates/BlogPosts.js`)
+  createPage({
+    path: '/blog',
+    component: BlogPostsTemplate,
+  })
+
   // Transform blog posts
   const BlogPostTemplate = path.resolve(`src/templates/BlogPost.js`)
   return graphql(`
@@ -40,7 +47,6 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: BlogPostTemplate,
-        context: {},
       })
     })
   })

@@ -20,16 +20,17 @@ export const pageQuery = graphql`
 
 const render = new Rehype({
   createElement: React.createElement,
-  components: { h1: Card },
+  components: { p: Card },
 }).Compiler
 
 const Template = ({ data }) => {
-  const { frontmatter, htmlAst } = data.markdownRemark
+  const { frontmatter, htmlAst, tableOfContents } = data.markdownRemark
 
   return (
     <Layout>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
+      <div>{tableOfContents}</div>
+      {/* <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.date}</h2> */}
       {render(htmlAst)}
     </Layout>
   )

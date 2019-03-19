@@ -9,6 +9,7 @@ export const COLORS = {
   PURPLE: '#9c66ff',
   PALE_WHITE: '#d2d0c6',
   WHITE: '#ffffff',
+  OFF_WHITE: '#efefef',
   RED: '#f9065f',
   RED_DARK: '#960050',
   YELLOW: '#c3b322',
