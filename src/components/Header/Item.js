@@ -43,7 +43,11 @@ export const Item = ({ label, url, icon }) => {
   )
 
   if (url.startsWith('http')) {
-    return <StyledA href={url}>{body}</StyledA>
+    return (
+      <StyledA target="_blank" href={url}>
+        {body}
+      </StyledA>
+    )
   }
 
   return <StyledLink to={url}>{body}</StyledLink>
