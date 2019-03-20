@@ -15,6 +15,15 @@ const Container = styled.div`
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.PALE_WHITE};
+
+  justify-content: center;
+`
+
+const InnerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 60rem;
 `
 
 const TitleContainer = styled.div`
@@ -24,21 +33,23 @@ const TitleContainer = styled.div`
 
 const HeaderComponent = ({ title }) => (
   <Container>
-    <TitleContainer>
-      <Title siteTitle={title} />
-    </TitleContainer>
+    <InnerContainer>
+      <TitleContainer>
+        <Title siteTitle={title} />
+      </TitleContainer>
 
-    <Item
-      icon="favorite"
-      label="Projects"
-      url="https://github.com/Nick-Lucas/"
-    />
-    <Item
-      icon="people"
-      label="Past Roles"
-      url="https://www.linkedin.com/in/nicholasjlucas/"
-    />
-    <Item icon="notes" label="Blog" url="/blog" />
+      <Item
+        icon="favorite"
+        label="Projects"
+        url="https://github.com/Nick-Lucas/"
+      />
+      <Item
+        icon="people"
+        label="Past Roles"
+        url="https://www.linkedin.com/in/nicholasjlucas/"
+      />
+      <Item icon="notes" label="Blog" url="/blog" />
+    </InnerContainer>
   </Container>
 )
 
