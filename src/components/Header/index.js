@@ -17,9 +17,16 @@ const Container = styled.div`
   border-bottom-color: ${COLORS.PALE_WHITE};
 `
 
+const TitleContainer = styled.div`
+  display: flex;
+  flex: 1;
+`
+
 const HeaderComponent = ({ title }) => (
   <Container>
-    <Title siteTitle={title} />
+    <TitleContainer>
+      <Title siteTitle={title} />
+    </TitleContainer>
 
     <Item
       icon="favorite"

@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Rehype from 'rehype-react'
 import { Helmet } from 'react-helmet'
 
 import Layout from 'components/layout'
+import { HtmlAst } from 'pages/HtmlAst'
+import { Section } from 'lib/Section'
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -18,12 +19,6 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const render = new Rehype({
-  createElement: React.createElement,
-  components: {},
-}).Compiler
-
 const Template = ({ data }) => {
   const { frontmatter, htmlAst } = data.markdownRemark
 
@@ -33,7 +28,9 @@ const Template = ({ data }) => {
         <title>{frontmatter.title}</title>
       </Helmet>
 
-      {render(htmlAst)}
+      <Section>
+        <HtmlAst htmlAst={htmlAst} />
+      </Section>
     </Layout>
   )
 }

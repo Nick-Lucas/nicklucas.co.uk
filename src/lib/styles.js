@@ -15,6 +15,11 @@ export const COLORS = {
   YELLOW: '#c3b322',
 }
 
+export const THEME = {
+  BACKGROUND: COLORS.OFF_WHITE,
+  FONT: COLORS.DARK_TINT,
+}
+
 const generateShadow = ({
   distance = 2,
   blur = 5,
@@ -50,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${COLORS.OFF_WHITE};
+    background: ${THEME.BACKGROUND};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Text setup */
   * {
-    color: ${COLORS.DARK_TINT};
+    color: ${THEME.FONT};
     flex-direction: column;
   }
   h1 {
@@ -102,13 +107,12 @@ export const GlobalStyle = createGlobalStyle`
   ul {
     margin: 0;
     margin-top: 0.5rem;
+    padding-inline-start: 1.5rem;
   }
   li {
     margin: 0;
     margin-bottom: 0.5rem;
   }
-
-  br {}
 
   button {
     font-size: 1rem;

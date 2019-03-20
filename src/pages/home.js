@@ -4,11 +4,10 @@ import PropTypes from 'prop-types'
 
 import Layout from 'components/layout'
 import SEO from 'components/seo'
-import { Row } from 'lib/Flex'
-import { LinkedInBadge } from 'components/LinkedInBadge'
 import { Section } from 'lib/Section'
+import { HtmlAst } from './HtmlAst'
 
-const IndexPage = ({ data: { html } }) => {
+const IndexPage = ({ data: { htmlAst } }) => {
   return (
     <Layout>
       <SEO
@@ -20,19 +19,16 @@ const IndexPage = ({ data: { html } }) => {
           `london`,
         ]}
       />
-
       <Section>
-        <Row>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <LinkedInBadge />
-        </Row>
+        <h1>Welcome!</h1>
+        <HtmlAst htmlAst={htmlAst} />
       </Section>
     </Layout>
   )
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({ html: PropTypes.string.isRequired }).isRequired,
+  data: PropTypes.shape({ htmlAst: PropTypes.object.isRequired }).isRequired,
 }
 
 export default () => (
@@ -40,7 +36,7 @@ export default () => (
     query={graphql`
       query {
         markdownRemark(fileAbsolutePath: { regex: "/pages/home.md/" }) {
-          html
+          htmlAst
         }
       }
     `}
