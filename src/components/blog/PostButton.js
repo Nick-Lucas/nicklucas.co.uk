@@ -6,6 +6,7 @@ import { Card } from 'lib/Card'
 import { Icon } from 'lib/Icon'
 import { Row, Col } from 'lib/Flex'
 import { Clickable } from 'lib/Clickable'
+import { Spacer } from 'lib/Spacer'
 
 const Chevron = styled(Icon)`
   align-self: center;
@@ -23,6 +24,7 @@ export const PostButton = ({ node }) => {
             <h3>{frontmatter.title}</h3>
             <h5>{frontmatter.date}</h5>
             <p>{frontmatter.summary || excerpt}</p>
+            <Spacer size="medium" />
           </Col>
 
           <Chevron icon="arrow_forward_ios" />

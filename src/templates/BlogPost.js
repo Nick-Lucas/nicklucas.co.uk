@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Rehype from 'rehype-react'
 import { Helmet } from 'react-helmet'
 
-import { Card } from 'lib/Card'
 import Layout from 'components/layout'
 
 export const pageQuery = graphql`
@@ -22,7 +21,7 @@ export const pageQuery = graphql`
 
 const render = new Rehype({
   createElement: React.createElement,
-  components: { p: Card },
+  components: {},
 }).Compiler
 
 const Template = ({ data }) => {

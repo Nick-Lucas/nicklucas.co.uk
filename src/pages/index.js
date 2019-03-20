@@ -1,19 +1,46 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import Layout from 'components/layout'
-import Image from 'components/image'
 import SEO from 'components/seo'
+import { Row } from 'lib/Flex'
+import { LinkedInBadge } from 'components/LinkedInBadge'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hello there</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-  </Layout>
+const IndexPage = ({ data: { html } }) => {
+  return (
+    <Layout>
+      <SEO
+        title="Home"
+        keywords={[
+          `nick lucas`,
+          `software developer`,
+          `software engineer`,
+          `london`,
+        ]}
+      />
+
+      <Row>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <LinkedInBadge />
+      </Row>
+    </Layout>
+  )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({ html: PropTypes.string.isRequired }).isRequired,
+}
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        markdownRemark(fileAbsolutePath: { regex: "/pages/home.md/" }) {
+          html
+        }
+      }
+    `}
+    render={data => <IndexPage data={data.markdownRemark} />}
+  />
 )
-
-export default IndexPage

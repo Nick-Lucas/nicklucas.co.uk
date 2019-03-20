@@ -9,7 +9,6 @@ import { Item } from './Item'
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  /* background: ${COLORS.BLUE}; */
   padding: 0 2rem;
 
   border-bottom: solid;
@@ -21,9 +20,9 @@ const HeaderComponent = ({ title }) => (
   <Container>
     <Title siteTitle={title} />
 
-    <Item icon="attach_file" label="Blog" url="/blog" />
-    <Item icon="view_carousel" label="Projects" url="/projects" />
-    <Item icon="work" label="Past Roles" url="/roles" />
+    <Item icon="favorite" label="Projects" url="/projects" />
+    <Item icon="people" label="Past Roles" url="/roles" />
+    <Item icon="notes" label="Blog" url="/blog" />
   </Container>
 )
 

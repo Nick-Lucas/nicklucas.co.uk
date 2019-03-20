@@ -58,13 +58,13 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Text setup */
   * {
-    color: ${COLORS.DARK};
+    color: ${COLORS.DARK_TINT};
     flex-direction: column;
   }
   h1 {
     font-weight: 500;
     margin: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
 
     color: ${COLORS.BLUE};
     border-bottom-style: solid;
@@ -73,7 +73,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-weight: 500;
     margin: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 1.3rem;
 
     color: ${COLORS.PURPLE};
     border-bottom-style: solid;
@@ -84,21 +84,30 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.3rem;
     font-weight: 500;
     margin: 0;
-    margin-bottom: 0.5rem;
-
-    color: ${COLORS.YELLOW};
+    margin-top: 1rem;
   }
   h4 {
     margin: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
   h5 {
     margin: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
   p {
     margin: 0;
+    margin-top: 1rem;
   }
+
+  ul {
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+  li {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
   button {
     font-size: 1rem;
     cursor: pointer;

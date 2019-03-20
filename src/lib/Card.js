@@ -10,7 +10,7 @@ export const Card = styled.div(({ height }) => {
     display: flex;
     flex-direction: column;
     margin: 1rem 0rem;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
 
     border-radius: 0.2rem;
     ${shadows}
