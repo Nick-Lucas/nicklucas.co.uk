@@ -1,7 +1,7 @@
 // import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { SHADOWS } from './styles'
+import { SHADOWS, COLORS } from './styles'
 
 export const Card = styled.div(({ height }) => {
   const shadows = SHADOWS[height]
@@ -12,6 +12,7 @@ export const Card = styled.div(({ height }) => {
     margin: 1rem 0rem;
     padding: 0rem 1rem;
 
+    background-color: ${COLORS.WHITE};
     border-radius: 0.2rem;
     ${shadows}
   `

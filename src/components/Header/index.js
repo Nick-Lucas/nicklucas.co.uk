@@ -11,6 +11,7 @@ const Container = styled.div`
   flex-direction: row;
   padding: 0 2rem;
 
+  background-color: ${COLORS.WHITE};
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.PALE_WHITE};
@@ -20,8 +21,16 @@ const HeaderComponent = ({ title }) => (
   <Container>
     <Title siteTitle={title} />
 
-    <Item icon="favorite" label="Projects" url="/projects" />
-    <Item icon="people" label="Past Roles" url="/roles" />
+    <Item
+      icon="favorite"
+      label="Projects"
+      url="https://github.com/Nick-Lucas/"
+    />
+    <Item
+      icon="people"
+      label="Past Roles"
+      url="https://www.linkedin.com/in/nicholasjlucas/"
+    />
     <Item icon="notes" label="Blog" url="/blog" />
   </Container>
 )

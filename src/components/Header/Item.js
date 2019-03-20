@@ -9,6 +9,18 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
+  text-decoration: none;
+
+  :hover {
+    background: ${COLORS.OFF_WHITE};
+    transition: 0.3s;
+  }
+`
+const StyledA = styled.a`
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 
   :hover {
     background: ${COLORS.OFF_WHITE};
@@ -22,17 +34,20 @@ const Text = styled.h3`
   color: ${COLORS.DARK};
 `
 
-export const Item = ({ label, url, icon }) => (
-  <StyledLink
-    to={url}
-    style={{
-      textDecoration: `none`,
-    }}
-  >
-    {icon && <Icon icon={icon} />}
-    <Text>{label}</Text>
-  </StyledLink>
-)
+export const Item = ({ label, url, icon }) => {
+  const body = (
+    <>
+      {icon && <Icon icon={icon} />}
+      <Text>{label}</Text>
+    </>
+  )
+
+  if (url.startsWith('http')) {
+    return <StyledA href={url}>{body}</StyledA>
+  }
+
+  return <StyledLink to={url}>{body}</StyledLink>
+}
 
 Item.propTypes = {
   label: PropTypes.string,

@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${COLORS.WHITE};
+    background: ${COLORS.OFF_WHITE};
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -107,6 +107,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     margin-bottom: 0.5rem;
   }
+
+  br {}
 
   button {
     font-size: 1rem;

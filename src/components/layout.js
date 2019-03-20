@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 
 import { Header } from './Header'
 import styled from 'styled-components'
-import { GlobalStyle, SHADOWS } from 'lib/styles'
+import { GlobalStyle } from 'lib/styles'
 
 const Page = styled.div`
   display: block;
@@ -28,10 +28,9 @@ const Body = styled.div`
 
   max-width: 50rem;
 
-  margin: 0 auto;
-  padding: 1rem;
-
-  /* ${SHADOWS.LOW} */
+  margin: 1rem auto;
+  padding: 2rem;
+  padding-top: 0;
 `
 
 const Layout = ({ children }) => (
