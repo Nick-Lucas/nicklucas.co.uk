@@ -1,6 +1,6 @@
 #### I'm a full-stack software engineer and problem solver
 
-I've been building valuable business tools and experiences since 2014 to make teams more efficient and effective. I love building great experiences for customers, and working with teams to automate workloads so they can focus on what really matters.
+I've been building valuable business tools and experiences since 2014, making teams more efficient and effective. I love building great experiences for customers, and working with teams to automate workloads so they can focus on what really matters.
 
 What have I learned?
 
