@@ -4,8 +4,9 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from 'components/layout'
-import { HtmlAst } from 'pages/HtmlAst'
+
 import { Section } from 'lib/Section'
+import { HtmlAst } from 'lib/HtmlAst'
 
 export const pageQuery = graphql`
   query($path: String!) {
