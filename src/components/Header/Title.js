@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { HeadshotImage } from 'components/Images/Headshot'
 import { Clickable } from 'lib/Clickable'
@@ -38,18 +37,14 @@ const H1 = styled.h1`
   border-bottom: none;
 `
 
-export const Title = ({ siteTitle }) => (
+export const Title = () => (
   <StyledClickable to="/">
     <Container>
       <HeadshotContainer>
         <HeadshotImage />
       </HeadshotContainer>
 
-      <H1>{siteTitle}</H1>
+      <H1>{'/**'}</H1>
     </Container>
   </StyledClickable>
 )
-
-Title.propTypes = {
-  siteTitle: PropTypes.string,
-}

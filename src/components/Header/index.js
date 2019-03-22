@@ -1,8 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Title } from './Title'
-import { StaticQuery, graphql } from 'gatsby'
 import { COLORS } from 'lib/styles'
 import { Item } from './Item'
 
@@ -24,6 +22,10 @@ const InnerContainer = styled.div`
   flex-direction: row;
   flex: 1;
   max-width: 60rem;
+
+  @media only screen and (max-width: 30rem) {
+    flex-direction: column;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -31,11 +33,11 @@ const TitleContainer = styled.div`
   flex: 1;
 `
 
-const HeaderComponent = ({ title }) => (
+export const Header = () => (
   <Container>
     <InnerContainer>
       <TitleContainer>
-        <Title siteTitle={title} />
+        <Title />
       </TitleContainer>
 
       <Item
@@ -51,29 +53,4 @@ const HeaderComponent = ({ title }) => (
       <Item icon="notes" label="Blog" url="/blog" />
     </InnerContainer>
   </Container>
-)
-
-HeaderComponent.propTypes = {
-  title: PropTypes.string,
-}
-
-HeaderComponent.defaultProps = {
-  title: ``,
-}
-
-export const Header = props => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <HeaderComponent title={data.site.siteMetadata.title} {...props} />
-    )}
-  />
 )

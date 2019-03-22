@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `/**`,
+    title: `Nick Lucas`,
     description: `Full-stack problem solver`,
     author: `Nick Lucas`,
   },
@@ -23,13 +23,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Nick Lucas`,
+        short_name: `NL`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/headshot.jpeg`,
       },
     },
     {

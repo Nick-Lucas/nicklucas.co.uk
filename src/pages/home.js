@@ -11,7 +11,6 @@ const IndexPage = ({ data: { htmlAst } }) => {
   return (
     <Layout>
       <SEO
-        title="Home"
         keywords={[
           `nick lucas`,
           `software developer`,

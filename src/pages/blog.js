@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 
 import Layout from 'components/layout'
 import { PostButton } from 'components/blog/PostButton'
+import SEO from 'components/seo'
 
 export default () => {
   return (
@@ -34,7 +35,20 @@ export default () => {
       render={data => {
         const { edges } = data.allMarkdownRemark
 
-        return <Layout>{edges.map(PostButton)}</Layout>
+        return (
+          <Layout>
+            <SEO
+              title="Blog"
+              keywords={[
+                `nick lucas`,
+                `software developer`,
+                `software engineer`,
+                `london`,
+              ]}
+            />
+            {edges.map(PostButton)}
+          </Layout>
+        )
       }}
     />
   )
