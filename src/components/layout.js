@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 
 import { Header } from './Header'
 import styled from 'styled-components'
-import { GlobalStyle } from 'lib/styles'
+import { GlobalStyle, generateMobileOveride } from 'lib/styles'
 
 const Page = styled.div`
   display: block;
@@ -31,6 +31,8 @@ const Body = styled.div`
   margin: 1rem auto;
   padding: 2rem;
   padding-top: 0;
+
+  ${generateMobileOveride(`padding: 0.5rem;`)}
 `
 
 const Layout = ({ children }) => (

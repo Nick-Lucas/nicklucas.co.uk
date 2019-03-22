@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Title } from './Title'
-import { COLORS } from 'lib/styles'
+import { COLORS, generateMobileOveride } from 'lib/styles'
 import { Item } from './Item'
 
 const Container = styled.div`
@@ -23,9 +23,7 @@ const InnerContainer = styled.div`
   flex: 1;
   max-width: 60rem;
 
-  @media only screen and (max-width: 30rem) {
-    flex-direction: column;
-  }
+  ${generateMobileOveride(`flex-direction: column;`)}
 `
 
 const TitleContainer = styled.div`

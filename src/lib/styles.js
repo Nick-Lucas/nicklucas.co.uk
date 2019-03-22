@@ -31,6 +31,12 @@ const generateShadow = ({
   box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
 `
 
+export const generateMobileOveride = (styles = ``) => `
+  @media only screen and (max-width: 30rem) {
+    ${styles}
+  }
+`
+
 export const SHADOWS = {
   LOW: generateShadow({
     distance: 1,
