@@ -7,9 +7,10 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import PageTransition from 'gatsby-plugin-page-transitions'
+import styled from 'styled-components'
 
 import { Header } from './Header'
-import styled from 'styled-components'
 import { GlobalStyle, generateMobileOveride } from 'lib/styles'
 
 const Page = styled.div`
@@ -39,14 +40,16 @@ const Layout = ({ children }) => (
   <Page>
     <GlobalStyle />
     <Header />
-    <Body>
-      <main>{children}</main>
-      {/* <footer>
+    <PageTransition>
+      <Body>
+        <main>{children}</main>
+        {/* <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer> */}
-    </Body>
+      </Body>
+    </PageTransition>
   </Page>
 )
 

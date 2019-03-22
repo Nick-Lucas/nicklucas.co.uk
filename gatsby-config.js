@@ -41,6 +41,12 @@ module.exports = {
     },
 
     // Coding resourceas
+    {
+      resolve: 'gatsby-plugin-page-transitions',
+      options: {
+        transitionTime: 300,
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-resolve-src`,
     {
