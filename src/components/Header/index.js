@@ -26,6 +26,13 @@ const InnerContainer = styled.div`
   ${generateMobileOveride(`flex-direction: column;`)}
 `
 
+const ItemsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
 const TitleContainer = styled.div`
   display: flex;
   flex: 1;
@@ -38,17 +45,19 @@ export const Header = () => (
         <Title />
       </TitleContainer>
 
-      <Item
-        icon="favorite"
-        label="Projects"
-        url="https://github.com/Nick-Lucas/"
-      />
-      <Item
-        icon="people"
-        label="Past Roles"
-        url="https://www.linkedin.com/in/nicholasjlucas/"
-      />
-      <Item icon="notes" label="Blog" url="/blog" />
+      <ItemsContainer>
+        <Item
+          icon="favorite"
+          label="Projects"
+          url="https://github.com/Nick-Lucas/"
+        />
+        <Item
+          icon="people"
+          label="Past Roles"
+          url="https://www.linkedin.com/in/nicholasjlucas/"
+        />
+        <Item icon="notes" label="Blog" url="/blog" />
+      </ItemsContainer>
     </InnerContainer>
   </Container>
 )

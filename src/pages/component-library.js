@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Layout from 'components/layout'
 import { Card } from 'lib/Card'
 import { Button } from 'lib/Button'
+import { Spacer } from 'lib/Spacer'
 
 const ComponentLibrary = () => (
   <Layout>
@@ -32,6 +33,7 @@ const ComponentLibrary = () => (
         Aliquam at pulvinar enim. Curabitur erat enim, efficitur in sagittis id,
         pretium dictum nulla.
       </p>
+      <Spacer size="medium" />
     </Card>
     <Link to="/">Link back to the homepage</Link>
 

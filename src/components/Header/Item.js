@@ -32,6 +32,9 @@ const Text = styled.h3`
   margin: 0;
   border-bottom: none;
   color: ${COLORS.DARK};
+
+  white-space: nowrap;
+  overflow: hidden;
 `
 
 export const Item = ({ label, url, icon }) => {
