@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  margin: 1rem;
+  /* margin: 1rem; */
 `
 
 export const LinkedInBadge = () => {
@@ -24,7 +24,7 @@ export const LinkedInBadge = () => {
         data-size="medium"
         data-locale="en_US"
         data-type="vertical"
-        data-theme="dark"
+        data-theme="light"
         data-vanity="nicholasjlucas"
       >
         {/* <a

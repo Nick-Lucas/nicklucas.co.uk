@@ -18,8 +18,10 @@ const IndexPage = ({ data: { htmlAst } }) => {
           `london`,
         ]}
       />
+
       <Section>
         <h1>Welcome!</h1>
+
         <HtmlAst htmlAst={htmlAst} />
       </Section>
     </Layout>
