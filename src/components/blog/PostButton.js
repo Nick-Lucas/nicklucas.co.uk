@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Card } from 'lib/Card'
+import { Card, CardHeader } from 'lib/Card'
 import { Icon } from 'lib/Icon'
 import { Row, Col } from 'lib/Flex'
 import { Clickable } from 'lib/Clickable'
@@ -19,9 +19,11 @@ export const PostButton = ({ node }) => {
   return (
     <Clickable to={frontmatter.path} key={frontmatter.path}>
       <Card>
+        <CardHeader>
+          <h3>{frontmatter.title}</h3>
+        </CardHeader>
         <Row>
           <Col>
-            <h3>{frontmatter.title}</h3>
             <h5>{frontmatter.date}</h5>
             <p>{frontmatter.summary || excerpt}</p>
             <Spacer size="medium" />

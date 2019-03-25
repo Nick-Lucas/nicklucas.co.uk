@@ -11,7 +11,8 @@ import Transition from './Transition'
 import styled from 'styled-components'
 
 import { Header } from './Header'
-import { GlobalStyle, generateMobileOveride } from 'lib/styles'
+import { generateMobileOveride } from 'lib/styles'
+import { GlobalStyle } from 'lib/GlobalStyle'
 
 const Page = styled.div`
   display: block;
@@ -29,9 +30,9 @@ const Body = styled.div`
 
   max-width: 50rem;
 
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 2rem;
-  padding-top: 0;
+  padding-top: 1rem;
 
   ${generateMobileOveride(`padding: 0.5rem;`)}
 `

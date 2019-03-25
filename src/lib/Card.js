@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { SHADOWS, COLORS } from './styles'
+import { Section } from './Section'
 
 export const Card = styled.div(({ height }) => {
   const shadows = SHADOWS[height]
@@ -14,6 +15,7 @@ export const Card = styled.div(({ height }) => {
 
     background-color: ${COLORS.WHITE};
     border-radius: 0.2rem;
+    overflow: hidden;
     ${shadows}
   `
 })
@@ -24,3 +26,10 @@ Card.propTypes = {
 Card.defaultProps = {
   height: 'LOW',
 }
+
+export const CardHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0 -1rem;
+  padding: 0.5rem 1rem;
+  background-color: ${COLORS.BLUE};
+`

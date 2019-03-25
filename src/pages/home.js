@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import SEO from 'components/seo'
 import { Section } from 'lib/Section'
 import { HtmlAst } from 'lib/HtmlAst'
+import { CardHeader } from 'lib/Card'
 
 const Home = () => {
   const { htmlAst } = useStaticQuery(graphql`
