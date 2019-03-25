@@ -43,6 +43,7 @@ module.exports = {
     },
 
     // Coding resources
+    `gatsby-mdx`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-layout`,

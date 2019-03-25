@@ -20,9 +20,44 @@ exports.createPages = ({ actions, graphql }) => {
     toPath: `https://www.linkedin.com/in/nicholasjlucas/`,
   })
 
+  // Transform MDX pages
+  const MDXPageTemplate = path.resolve(`src/templates/MDXPage.js`)
+  const mdxPagePromise = graphql`
+    query MDXQuery {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              title
+              path
+            }
+          }
+        }
+      }
+    }
+  `.then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
+
+    console.log(
+      'Found',
+      result.data.allMdx.edges.length,
+      'MDX pages:',
+      JSON.stringify(result.data.allMdx.edges)
+    )
+
+    result.data.allMdx.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: MDXPageTemplate,
+      })
+    })
+  })
+
   // Transform blog posts
   const BlogPostTemplate = path.resolve(`src/templates/BlogPost.js`)
-  return graphql(`
+  const blogPostsPromise = graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -57,4 +92,6 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
   })
+
+  return Promise.all([mdxPagePromise, blogPostsPromise])
 }
