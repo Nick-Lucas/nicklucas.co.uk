@@ -1,12 +1,19 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import SEO from 'components/seo'
 import { Section } from 'lib/Section'
 import { HtmlAst } from 'lib/HtmlAst'
 
-const IndexPage = ({ data: { htmlAst } }) => {
+const Home = () => {
+  const { htmlAst } = useStaticQuery(graphql`
+    query {
+      markdownRemark(fileAbsolutePath: { regex: "/pages/home.md/" }) {
+        htmlAst
+      }
+    }
+  `).markdownRemark
+
   return (
     <>
       <SEO
@@ -27,19 +34,4 @@ const IndexPage = ({ data: { htmlAst } }) => {
   )
 }
 
-IndexPage.propTypes = {
-  data: PropTypes.shape({ htmlAst: PropTypes.object.isRequired }).isRequired,
-}
-
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        markdownRemark(fileAbsolutePath: { regex: "/pages/home.md/" }) {
-          htmlAst
-        }
-      }
-    `}
-    render={data => <IndexPage data={data.markdownRemark} />}
-  />
-)
+export default Home
