@@ -22,4 +22,4 @@ As a hobbyist, I am a regular OSS contributor, and have built a number of open s
 
 ---
 
-##### I built this site with [React](https://reactjs.org/) and [GatsbyJS](https://www.gatsbyjs.org/), it's fully open source and available [here](https://github.com/Nick-Lucas/nicklucas.co.uk).
+##### This site is built with [React](https://reactjs.org/) and [GatsbyJS](https://www.gatsbyjs.org/), it's fully open source and available [here](https://github.com/Nick-Lucas/nicklucas.co.uk).
