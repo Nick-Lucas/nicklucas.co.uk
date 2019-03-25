@@ -2,14 +2,13 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from 'components/layout'
 import SEO from 'components/seo'
 import { Section } from 'lib/Section'
 import { HtmlAst } from 'lib/HtmlAst'
 
 const IndexPage = ({ data: { htmlAst } }) => {
   return (
-    <Layout>
+    <>
       <SEO
         keywords={[
           `nick lucas`,
@@ -24,7 +23,7 @@ const IndexPage = ({ data: { htmlAst } }) => {
 
         <HtmlAst htmlAst={htmlAst} />
       </Section>
-    </Layout>
+    </>
   )
 }
 

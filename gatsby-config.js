@@ -1,3 +1,5 @@
+/*eslint-env node*/
+
 module.exports = {
   siteMetadata: {
     title: `Nick Lucas`,
@@ -40,11 +42,11 @@ module.exports = {
       },
     },
 
-    // Coding resourceas
+    // Coding resources
     {
-      resolve: 'gatsby-plugin-page-transitions',
+      resolve: `gatsby-plugin-layout`,
       options: {
-        transitionTime: 300,
+        component: require.resolve(`./src/components/layout.js`),
       },
     },
     `gatsby-plugin-styled-components`,

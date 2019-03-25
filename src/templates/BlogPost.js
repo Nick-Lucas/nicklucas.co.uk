@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import Layout from 'components/layout'
-
 import { Section } from 'lib/Section'
 import { HtmlAst } from 'lib/HtmlAst'
 
@@ -24,7 +22,7 @@ const Template = ({ data }) => {
   const { frontmatter, htmlAst } = data.markdownRemark
 
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>{frontmatter.title}</title>
       </Helmet>
@@ -32,7 +30,7 @@ const Template = ({ data }) => {
       <Section>
         <HtmlAst htmlAst={htmlAst} />
       </Section>
-    </Layout>
+    </>
   )
 }
 

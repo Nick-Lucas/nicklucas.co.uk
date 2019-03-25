@@ -7,7 +7,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import PageTransition from 'gatsby-plugin-page-transitions'
+import Transition from './Transition'
 import styled from 'styled-components'
 
 import { Header } from './Header'
@@ -40,7 +40,8 @@ const Layout = ({ children }) => (
   <Page>
     <GlobalStyle />
     <Header />
-    <PageTransition>
+
+    <Transition>
       <Body>
         <main>{children}</main>
         {/* <footer>
@@ -49,7 +50,7 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer> */}
       </Body>
-    </PageTransition>
+    </Transition>
   </Page>
 )
 

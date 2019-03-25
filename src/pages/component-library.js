@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from 'components/layout'
 import { Card } from 'lib/Card'
 import { Button } from 'lib/Button'
 import { Spacer } from 'lib/Spacer'
 
 const ComponentLibrary = () => (
-  <Layout>
+  <>
     <h1>H1 Header</h1>
     <h2>H2 Header</h2>
     <h3>H3 Header</h3>
@@ -41,7 +40,7 @@ const ComponentLibrary = () => (
 
     <Button type="Primary">Primary Button</Button>
     <Button type="Secondary">Secondary Button</Button>
-  </Layout>
+  </>
 )
 
 export default ComponentLibrary

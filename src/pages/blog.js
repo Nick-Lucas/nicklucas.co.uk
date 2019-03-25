@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 
-import Layout from 'components/layout'
 import { PostButton } from 'components/blog/PostButton'
 import SEO from 'components/seo'
 
@@ -36,7 +35,7 @@ export default () => {
         const { edges } = data.allMarkdownRemark
 
         return (
-          <Layout>
+          <>
             <SEO
               title="Blog"
               keywords={[
@@ -47,7 +46,7 @@ export default () => {
               ]}
             />
             {edges.map(PostButton)}
-          </Layout>
+          </>
         )
       }}
     />
