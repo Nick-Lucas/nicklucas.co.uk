@@ -111,7 +111,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     margin: 0;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding-inline-start: 1.5rem;
   }
   li {
