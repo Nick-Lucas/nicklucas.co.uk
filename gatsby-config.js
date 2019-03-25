@@ -31,6 +31,7 @@ module.exports = {
         icon: `src/images/headshot.jpeg`,
       },
     },
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -43,7 +44,6 @@ module.exports = {
     },
 
     // Coding resources
-    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
