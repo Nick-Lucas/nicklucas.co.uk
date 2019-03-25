@@ -43,7 +43,18 @@ module.exports = {
     },
 
     // Coding resources
-    `gatsby-mdx`,
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        globalScope: `
+          import { Section } from 'lib/Section'
+
+          export default {
+            Section
+          }
+        `,
+      },
+    },
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-layout`,

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { HtmlMdx } from 'lib/HtmlMdx'
 
 export const pageQuery = graphql`
-  query MDXRuntimeQuery($path: String!) {
+  query MDXQuery($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title

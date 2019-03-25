@@ -65,10 +65,14 @@ exports.createPages = ({ actions, graphql }) => {
       allMdx {
         edges {
           node {
-            id
             frontmatter {
               title
               path
+            }
+            parent {
+              ... on File {
+                name
+              }
             }
           }
         }
