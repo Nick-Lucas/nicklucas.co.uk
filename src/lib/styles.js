@@ -82,14 +82,13 @@ export const GlobalStyle = createGlobalStyle`
     border-bottom-width: 0.1rem;
   }
   h2 {
+    font-size: 1.3rem;
     font-weight: 500;
     margin: 0;
     margin-top: 1.3rem;
 
-    color: ${COLORS.PURPLE};
     border-bottom-style: solid;
     border-bottom-width: 0.1rem;
-    display: table;
   }
   h3 {
     font-size: 1.3rem;

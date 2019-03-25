@@ -46,16 +46,8 @@ export const Header = () => (
       </TitleContainer>
 
       <ItemsContainer>
-        <Item
-          icon="favorite"
-          label="Projects"
-          url="https://github.com/Nick-Lucas/"
-        />
-        <Item
-          icon="people"
-          label="Past Roles"
-          url="https://www.linkedin.com/in/nicholasjlucas/"
-        />
+        <Item icon="favorite" label="Projects" url="/projects" />
+        <Item icon="people" label="Past Roles" url="/roles" />
         <Item icon="notes" label="Blog" url="/blog" />
       </ItemsContainer>
     </InnerContainer>
