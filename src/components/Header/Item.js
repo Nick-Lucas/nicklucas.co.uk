@@ -5,7 +5,12 @@ import styled from 'styled-components'
 import { COLORS } from 'lib/styles'
 import { Icon } from 'lib/Icon'
 
-const StyledLink = styled(Link)`
+const linkProps = {
+  current: PropTypes.bool,
+}
+
+/* eslint-disable-next-line no-unused-vars */
+const StyledLink = styled(({ current, ...rest }) => <Link {...rest} />)`
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -15,8 +20,13 @@ const StyledLink = styled(Link)`
     background: ${COLORS.OFF_WHITE};
     transition: 0.3s;
   }
+
+  ${({ current }) => current && `background: ${COLORS.OFF_WHITE};`}
 `
-const StyledA = styled.a`
+StyledLink.propTypes = linkProps
+
+/* eslint-disable-next-line no-unused-vars */
+const StyledA = styled(({ current, ...rest }) => <a {...rest} />)`
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -26,7 +36,10 @@ const StyledA = styled.a`
     background: ${COLORS.OFF_WHITE};
     transition: 0.3s;
   }
+
+  ${({ current }) => current && `background: ${COLORS.OFF_WHITE};`}
 `
+StyledA.propTypes = linkProps
 
 const Text = styled.h3`
   margin: 0;
@@ -37,7 +50,7 @@ const Text = styled.h3`
   overflow: hidden;
 `
 
-export const Item = ({ label, url, icon }) => {
+export const Item = ({ label, url, icon, current }) => {
   const body = (
     <>
       {icon && <Icon icon={icon} />}
@@ -47,17 +60,26 @@ export const Item = ({ label, url, icon }) => {
 
   if (url.startsWith('http')) {
     return (
-      <StyledA target="_blank" href={url}>
+      <StyledA target="_blank" href={url} current={current}>
         {body}
       </StyledA>
     )
   }
 
-  return <StyledLink to={url}>{body}</StyledLink>
+  return (
+    <StyledLink to={url} current={current}>
+      {body}
+    </StyledLink>
+  )
 }
 
 Item.propTypes = {
   label: PropTypes.string,
   url: PropTypes.string,
   icon: PropTypes.string,
+  current: PropTypes.bool,
+}
+
+Item.defaultProps = {
+  current: false,
 }

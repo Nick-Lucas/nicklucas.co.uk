@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Title } from './Title'
 import { COLORS, generateMobileOveride } from 'lib/styles'
 import { Item } from './Item'
+import { Location } from '@reach/router'
 
 const Container = styled.div`
   display: flex;
@@ -40,18 +42,49 @@ const TitleContainer = styled.div`
   flex: 1;
 `
 
-export const Header = () => (
-  <Container>
-    <InnerContainer>
-      <TitleContainer>
-        <Title />
-      </TitleContainer>
+class HeaderInner extends React.PureComponent {
+  renderItem = (icon, label, route = '/') => {
+    const { location } = this.props
 
-      <ItemsContainer>
-        <Item icon="favorite" label="Projects" url="/projects" />
-        <Item icon="people" label="Past Roles" url="/roles" />
-        <Item icon="notes" label="Blog" url="/blog" />
-      </ItemsContainer>
-    </InnerContainer>
-  </Container>
+    if (route.slice(route.length - 1) !== '/') {
+      route += '/'
+    }
+
+    return (
+      <Item
+        icon={icon}
+        label={label}
+        url={route}
+        current={location && location.startsWith(route)}
+      />
+    )
+  }
+
+  render() {
+    return (
+      <Container>
+        <InnerContainer>
+          <TitleContainer>
+            <Title />
+          </TitleContainer>
+
+          <ItemsContainer>
+            {this.renderItem('favorite', 'Projects', '/projects')}
+            {this.renderItem('people', 'Past Roles', '/roles')}
+            {this.renderItem('notes', 'Blog', '/blog')}
+          </ItemsContainer>
+        </InnerContainer>
+      </Container>
+    )
+  }
+}
+
+HeaderInner.propTypes = {
+  location: PropTypes.string.isRequired,
+}
+
+export const Header = () => (
+  <Location>
+    {({ location }) => <HeaderInner location={location.pathname} />}
+  </Location>
 )
