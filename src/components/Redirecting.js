@@ -1,5 +1,14 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
+import { navigateTo } from 'gatsby'
 
-export default () => {
-  return <p>Redirecting you...</p>
+export default class extends PureComponent {
+  componentDidMount() {
+    setTimeout(() => {
+      navigateTo(this.props.to)
+    }, 500)
+  }
+
+  render() {
+    return <p>Redirecting you...</p>
+  }
 }
