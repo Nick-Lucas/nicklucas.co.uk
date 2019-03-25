@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import { navigateTo } from 'gatsby'
 
-export default class extends PureComponent {
+class Redirecting extends PureComponent {
   componentDidMount() {
     setTimeout(() => {
       navigateTo(this.props.to)
@@ -12,3 +13,9 @@ export default class extends PureComponent {
     return <p>Redirecting you...</p>
   }
 }
+
+Redirecting.propTypes = {
+  to: PropTypes.string.isRequired,
+}
+
+export default Redirecting
