@@ -46,8 +46,7 @@ exports.createPages = ({ actions, graphql }) => {
     console.log(
       'Found',
       result.data.allMarkdownRemark.edges.length,
-      'blog posts:',
-      JSON.stringify(result.data.allMarkdownRemark.edges)
+      'blog posts'
     )
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -79,17 +78,11 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
-    console.log(result)
     if (result.errors) {
       return Promise.reject(result.errors)
     }
 
-    console.log(
-      'Found',
-      result.data.allMdx.edges.length,
-      'MDX pages:',
-      JSON.stringify(result.data.allMdx.edges)
-    )
+    console.log('Found', result.data.allMdx.edges.length, 'MDX pages')
 
     result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
