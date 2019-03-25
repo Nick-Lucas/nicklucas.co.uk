@@ -37,6 +37,11 @@ const Body = styled.div`
   ${generateMobileOveride(`padding: 0.5rem;`)}
 `
 
+const Footer = styled.footer`
+  padding: 1rem;
+  padding-top: 0;
+`
+
 const Layout = ({ children }) => (
   <Page>
     <GlobalStyle />
@@ -47,7 +52,7 @@ const Layout = ({ children }) => (
         <main>{children}</main>
       </Transition>
 
-      <footer>
+      <Footer>
         <p>© {new Date().getFullYear()}, Nick Lucas</p>
         <h5>
           This site is built with <a href="https://reactjs.org/">React</a> and{' '}
@@ -55,7 +60,7 @@ const Layout = ({ children }) => (
           source{' '}
           <a href="https://github.com/Nick-Lucas/nicklucas.co.uk">on GitHub</a>.
         </h5>
-      </footer>
+      </Footer>
     </Body>
   </Page>
 )
