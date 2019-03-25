@@ -81,7 +81,7 @@ List item 1
 
 ### Subpoint 3
 
-[LINK ME AWAY](http://localhost:8000/blog)
+[LINK ME AWAY](/blog)
 
 # Thing 2
 
