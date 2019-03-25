@@ -18,7 +18,6 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true,
     redirectInBrowser: true,
     toPath: `https://www.linkedin.com/in/nicholasjlucas/`,
-    target: '_blank',
   })
 
   // Transform blog posts

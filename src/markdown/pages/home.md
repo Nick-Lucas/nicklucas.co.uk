@@ -5,9 +5,13 @@ I've been building valuable business tools and experiences since 2014, making te
 ## What have I done?
 
 Professionally I've worked on internal tooling for data entry and data analysis, as well as full-stack mobile application for consumers. I've designed complex & efficient data processing systems for identifying costly mistakes, and implemented key systems end-to-end such as mobile push notifications. 
+
 [**See more...**](/roles)
 
+---
+
 As a hobbyist, I am a regular OSS contributor, and have built a number of open source solutions from scratch. I'm proudest of [**giterm**](https://github.com/Nick-Lucas/giterm) which is a git terminal with build in GUI-like visualisation, a tool I use every day. 
+
 [**See more...**](/projects)
 
 ## What have I learned?
