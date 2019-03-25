@@ -1,6 +1,6 @@
 ---
 title: Home
-path: /test
+path: /
 ---
 
 #### I'm a full-stack software engineer and passionate problem solver
