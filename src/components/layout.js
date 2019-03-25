@@ -15,8 +15,8 @@ import { generateMobileOveride } from 'lib/styles'
 import { GlobalStyle } from 'lib/GlobalStyle'
 
 const Page = styled.div`
-  display: block;
-  /* flex-direction: column; */
+  display: flex;
+  align-items: center;
 
   min-height: 100vh;
   min-width: 100vw;
@@ -28,9 +28,9 @@ const Body = styled.div`
   flex-direction: column;
   flex: 1;
 
+  width: 100%;
   max-width: 50rem;
 
-  margin: 0 auto;
   padding: 2rem;
   padding-top: 1rem;
 
@@ -42,16 +42,21 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <Header />
 
-    <Transition>
-      <Body>
+    <Body>
+      <Transition>
         <main>{children}</main>
-        {/* <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer> */}
-      </Body>
-    </Transition>
+      </Transition>
+
+      <footer>
+        <p>© {new Date().getFullYear()}, Nick Lucas</p>
+        <h5>
+          This site is built with <a href="https://reactjs.org/">React</a> and{' '}
+          <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, it{"'"}s fully open
+          source{' '}
+          <a href="https://github.com/Nick-Lucas/nicklucas.co.uk">on GitHub</a>.
+        </h5>
+      </footer>
+    </Body>
   </Page>
 )
 

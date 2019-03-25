@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import {
   TransitionGroup,
@@ -15,21 +16,29 @@ const TRANSITION_STYLES = {
   entering: {
     position: 'absolute',
     marginTop: '2rem',
+    marginBottom: '-2rem',
     opacity: 0,
   },
   entered: {
     transition: `all ${DURATION}ms ease-in-out`,
 
     marginTop: '0',
+    marginBottom: '0',
     opacity: 1,
   },
   exiting: {
     transition: `all ${DURATION}ms ease-in-out`,
 
     marginTop: '2rem',
+    marginBottom: '-2rem',
     opacity: 0,
   },
 }
+
+const TransitionInner = styled.div`
+  display: flex;
+  flex: 1;
+`
 
 class Transition extends React.PureComponent {
   render() {
@@ -40,23 +49,22 @@ class Transition extends React.PureComponent {
     const { children } = this.props
 
     return (
-      <TransitionGroup>
+      <TransitionGroup component={null}>
         <ReactTransition
           key={location.pathname}
           timeout={{
             enter: DURATION,
             exit: DURATION,
           }}
-          component={null}
         >
           {status => (
-            <div
+            <TransitionInner
               style={{
                 ...TRANSITION_STYLES[status],
               }}
             >
               {children}
-            </div>
+            </TransitionInner>
           )}
         </ReactTransition>
       </TransitionGroup>
