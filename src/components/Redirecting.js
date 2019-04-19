@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { navigateTo } from 'gatsby'
+import { replace } from 'gatsby'
 
 class Redirecting extends PureComponent {
   componentDidMount() {
     setTimeout(() => {
-      navigateTo(this.props.to)
+      replace(this.props.to)
     }, 500)
   }
 
