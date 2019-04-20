@@ -5,26 +5,26 @@ import { COLORS } from 'lib/styles'
 import { Icon } from 'lib/Icon'
 
 const CircleShape = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin: 0;
   padding: 0;
+  outline: none;
+  overflow: hidden;
 
   border-radius: 100%;
   border-width: 3px;
   border-style: solid;
   border-color: ${COLORS.BLUE};
-  color: ${COLORS.BLUE};
 
+  color: ${COLORS.BLUE};
   background-color: ${COLORS.WHITE};
-  outline: none;
   :hover {
     background-color: ${COLORS.OFF_WHITE};
   }
   transition: 0.3s;
-
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   ${props => `
     min-width: ${props.size}rem;
@@ -35,18 +35,27 @@ const CircleShape = styled.button`
 `
 
 const StyledIcon = styled(Icon)`
-  color: ${COLORS.BLUE};
+  margin: 0;
+  padding: 0;
 
+  color: ${COLORS.BLUE};
   ${props => `font-size: ${props.size}rem;`}
+
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+  ${props => {
+    if (props.expanded) {
+      return `
+        transform: rotate(180deg)
+      `
+    }
+  }};
 `
 
 export const Circle = ({ size, expanded, toggle }) => {
   return (
     <CircleShape onClick={toggle} size={size}>
-      <StyledIcon
-        size={size}
-        icon={expanded ? 'arrow_drop_down' : 'arrow_drop_up'}
-      />
+      <StyledIcon size={size} icon={'arrow_drop_up'} expanded={expanded} />
     </CircleShape>
   )
 }
