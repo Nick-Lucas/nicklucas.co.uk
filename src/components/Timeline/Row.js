@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+
 import { COLORS, generateMobileOveride } from 'lib/styles'
+
+import { Circle } from './Circle'
 
 const CIRCLE_SIZE = 2
 
@@ -71,16 +74,6 @@ const BodyCell = styled.div`
   padding-top: 0.5rem;
 `
 
-const Circle = styled.div`
-  border-radius: 100%;
-  border-width: 3px;
-  border-style: solid;
-  color: ${COLORS.BLUE};
-
-  width: ${CIRCLE_SIZE}rem;
-  height: ${CIRCLE_SIZE}rem;
-`
-
 const Line = styled.div`
   display: flex;
   flex: 1;
@@ -108,15 +101,39 @@ const Title2 = styled.h4`
   font-weight: 500;
 `
 
+const BodyWrapper = styled.div`
+  display: flex;
+  flex: 1;
+
+  overflow: hidden;
+  transition: max-height 300ms 300ms, opacity 300ms 300ms;
+  max-height: 200vh;
+
+  ${props => {
+    if (props.hide) {
+      return `
+        opacity: 0.0;
+        max-height: 0px;
+      `
+    }
+  }}
+`
+
 const Spacer = styled.div`
   height: 2rem;
 `
 
 export const Row = ({ title1, title2, children, hideLine }) => {
+  const [expanded, setExpanded] = useState(true)
+
   return (
     <Container>
       <CircleCell>
-        <Circle />
+        <Circle
+          size={CIRCLE_SIZE}
+          expanded={expanded}
+          toggle={() => setExpanded(!expanded)}
+        />
         {hideLine || <Line />}
       </CircleCell>
 
@@ -136,7 +153,8 @@ export const Row = ({ title1, title2, children, hideLine }) => {
       </TitleMobile>
 
       <BodyCell>
-        {children}
+        <BodyWrapper hide={!expanded}>{children}</BodyWrapper>
+
         <Spacer />
       </BodyCell>
     </Container>

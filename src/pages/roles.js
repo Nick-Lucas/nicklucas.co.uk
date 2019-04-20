@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Timeline } from 'components/Timeline/Timeline'
-import { Row } from 'components/Timeline/Row'
+import { Timeline, Row } from 'components/Timeline'
 import { Section } from 'lib/Section'
 import { Spacer } from 'lib/Spacer'
 
