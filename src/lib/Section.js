@@ -8,8 +8,7 @@ export const Section = styled.div`
   flex: 1;
 
   margin: 1rem auto;
-  padding: 2rem;
-  padding-top: 0;
+  padding: 0 2rem;
 
   background-color: ${COLORS.WHITE};
   ${SHADOWS.LOW}

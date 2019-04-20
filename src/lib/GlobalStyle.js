@@ -1,4 +1,4 @@
-import { THEME, COLORS } from './styles'
+import { THEME, COLORS, SHADOWS } from './styles'
 import { createGlobalStyle } from 'styled-components'
 import { CardHeader } from './Card'
 
@@ -9,6 +9,9 @@ html {
   font-weight: 500;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color: ${COLORS.WHITE}
+
+  ${SHADOWS.LOW}
 }
 
 body {
