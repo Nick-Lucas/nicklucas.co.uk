@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Section } from 'lib/Section'
 import { HtmlAst } from 'lib/HtmlAst'
+import { Spacer } from 'lib/Spacer'
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -29,6 +30,7 @@ const Template = ({ data }) => {
 
       <Section>
         <HtmlAst htmlAst={htmlAst} />
+        <Spacer size="large" />
       </Section>
     </>
   )
