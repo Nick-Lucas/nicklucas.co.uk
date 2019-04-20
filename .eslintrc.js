@@ -2,11 +2,13 @@ module.exports = {
     plugins: [
         "react", 
         "prettier",
-        "import"
+        "import",
+        "jest"
     ],
     env: {
         es6: true,
-        browser: true
+        browser: true,
+        "jest/globals": true
     },
     extends: [
         "eslint:recommended", 

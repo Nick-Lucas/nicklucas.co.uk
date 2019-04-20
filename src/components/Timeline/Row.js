@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { COLORS, generateMobileOveride } from 'lib/styles'
 
 import { Circle } from './Circle'
+import { datesToDuration } from './datesToDuration'
 
 const CIRCLE_SIZE = 2
 
@@ -26,7 +27,7 @@ const CircleCell = styled.div`
 
 const LineCell = styled.div`
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 2 / 4;
 
   display: flex;
   align-items: center;
@@ -68,7 +69,7 @@ const TitleMobile = styled.div`
 
 const BodyCell = styled.div`
   grid-column: 2 / 4;
-  grid-row: 2;
+  grid-row: 3;
 
   display: flex;
   padding-top: 0.5rem;
@@ -81,6 +82,11 @@ const Line = styled.div`
 
   border-left-width: 3px;
   border-left-style: solid;
+  ${props => {
+    if (props.hide) {
+      return `border-left-style: none;`
+    }
+  }}
 `
 
 const Title1 = styled.h2`
@@ -123,21 +129,37 @@ const Spacer = styled.div`
   height: 2rem;
 `
 
-export const Row = ({ title1, title2, children, hideLine }) => {
+export const Row = ({
+  title1,
+  title2,
+  children,
+  hideLine,
+  hideTopLine,
+  dateFrom,
+  dateTo,
+}) => {
   const [expanded, setExpanded] = useState(true)
+
+  const duration = useMemo(() => datesToDuration(dateFrom, dateTo), [
+    dateFrom,
+    dateTo,
+  ])
 
   return (
     <Container>
       <CircleCell>
+        <Line hide={hideTopLine} />
         <Circle
           size={CIRCLE_SIZE}
           expanded={expanded}
           toggle={() => setExpanded(!expanded)}
         />
-        {hideLine || <Line />}
+        <Line hide={hideLine} />
       </CircleCell>
 
-      <LineCell>{hideLine || <Line />}</LineCell>
+      <LineCell>
+        <Line hide={hideLine} />
+      </LineCell>
 
       <Title1Cell>
         <Title1>{title1}</Title1>
@@ -145,11 +167,13 @@ export const Row = ({ title1, title2, children, hideLine }) => {
 
       <Title2Cell>
         <Title2>{title2}</Title2>
+        <Title2>{duration}</Title2>
       </Title2Cell>
 
       <TitleMobile>
         <Title1>{title1}</Title1>
         <Title2>{title2}</Title2>
+        <Title2>{duration}</Title2>
       </TitleMobile>
 
       <BodyCell>
@@ -166,8 +190,12 @@ Row.propTypes = {
   title2: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   hideLine: PropTypes.bool,
+  hideTopLine: PropTypes.bool,
+  dateFrom: PropTypes.string.isRequired,
+  dateTo: PropTypes.string.isRequired,
 }
 
 Row.defaultProps = {
   hideLine: false,
+  hideTopLine: false,
 }

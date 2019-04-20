@@ -1,14 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+
+import { Spacer } from 'lib/Spacer'
+import { firstRestLast } from './firstRestLast'
 
 export const Timeline = ({ children }) => {
   if (children.length > 0) {
-    const last = children.slice(-1)[0]
-    const rest = children.slice(0, -1)
+    const [first, rest, last] = firstRestLast(children)
 
     return (
       <>
+        <Spacer size="large" />
+        {React.cloneElement(first, {
+          hideTopLine: true,
+        })}
         {rest}
         {React.cloneElement(last, {
           hideLine: true,

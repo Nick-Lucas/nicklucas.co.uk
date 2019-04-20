@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { Timeline, Row } from 'components/Timeline'
 import { Section } from 'lib/Section'
-import { Spacer } from 'lib/Spacer'
 
 const Container = styled(Section)`
   padding-left: 1rem;
@@ -13,8 +12,12 @@ export default () => {
   return (
     <Container>
       <Timeline>
-        <Spacer size="large" />
-        <Row title1="WonderBill" title2="Software Engineer">
+        <Row
+          title1="WonderBill"
+          title2="Software Engineer"
+          dateFrom="2018-01"
+          dateTo="2019-03"
+        >
           Full stack engineer working on all aspects of the product.
           {/*  */}
           <h4>Key projects:</h4>
@@ -46,7 +49,12 @@ export default () => {
             <li> GitLab CI</li>
           </ul>
         </Row>
-        <Row title1="Stratajet" title2="Software Engineer">
+        <Row
+          title1="Stratajet"
+          title2="Software Engineer"
+          dateFrom="2015-03"
+          dateTo="2017-12"
+        >
           Full stack engineer building out tooling, data management, business
           intelligence, and the company's core product.
           {/*  */}
@@ -92,6 +100,8 @@ export default () => {
         <Row
           title1="Squared Online (Google / HLC Partnership)"
           title2="Assistant Product Coordinator"
+          dateFrom="2015-01"
+          dateTo="2015-06"
         >
           Developed a number of tools to solve administrative and reporting
           problems, and worked with the wider team to help improve processes and
@@ -101,6 +111,8 @@ export default () => {
         <Row
           title1="Squared Online (Google / HLC Partnership)"
           title2="Support Coordinator"
+          dateFrom="2014-08"
+          dateTo="2015-01"
         >
           Student support and running of the day to day course, class
           facilitation. Developed the company's reporting system and tools for
