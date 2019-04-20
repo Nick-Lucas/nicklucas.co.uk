@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { COLORS, generateMobileOveride } from 'lib/styles'
+import { Spacer } from 'lib/Spacer'
 
 import { Circle } from './Circle'
-import { datesToDuration } from './datesToDuration'
+import { datesToDuration, datesToRange, datesToMonths } from './datesToDuration'
 
 const CIRCLE_SIZE = 2
 
@@ -123,10 +124,6 @@ const BodyWrapper = styled.div`
   }}
 `
 
-const Spacer = styled.div`
-  height: 2rem;
-`
-
 export const Row = ({
   title1,
   title2,
@@ -138,7 +135,12 @@ export const Row = ({
 }) => {
   const [expanded, setExpanded] = useState(true)
 
-  const duration = useMemo(() => datesToDuration(dateFrom, dateTo), [
+  const duration = useMemo(() => datesToRange(dateFrom, dateTo), [
+    dateFrom,
+    dateTo,
+  ])
+
+  const range = useMemo(() => datesToMonths(dateFrom, dateTo), [
     dateFrom,
     dateTo,
   ])
@@ -165,13 +167,15 @@ export const Row = ({
 
       <Title2Cell>
         <Title2>{title2}</Title2>
-        <Title2>{duration}</Title2>
+        <Title2>
+          {duration} ({range})
+        </Title2>
       </Title2Cell>
 
       <BodyCell>
         <BodyWrapper hide={!expanded}>{children}</BodyWrapper>
 
-        <Spacer />
+        <Spacer size="large" />
       </BodyCell>
     </Container>
   )
