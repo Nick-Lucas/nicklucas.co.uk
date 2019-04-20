@@ -5,12 +5,16 @@ import { COLORS } from 'lib/styles'
 import { Icon } from 'lib/Icon'
 
 const CircleShape = styled.button`
+  margin: 0;
+  padding: 0;
+
   border-radius: 100%;
   border-width: 3px;
   border-style: solid;
   border-color: ${COLORS.BLUE};
   color: ${COLORS.BLUE};
 
+  background-color: ${COLORS.WHITE};
   outline: none;
   :hover {
     background-color: ${COLORS.OFF_WHITE};
@@ -23,8 +27,10 @@ const CircleShape = styled.button`
   align-items: center;
 
   ${props => `
-    width: ${props.size}rem;
-    height: ${props.size}rem;
+    min-width: ${props.size}rem;
+    max-width: ${props.size}rem;
+    min-height: ${props.size}rem;
+    max-height: ${props.size}rem;
   `};
 `
 
