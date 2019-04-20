@@ -2,6 +2,7 @@
 /*eslint-disable no-console */
 
 const axios = require('axios').default
+const _ = require('underscore')
 
 const API_KEY = process.env['APIKEY_GITHUB']
 
@@ -35,9 +36,32 @@ exports.handler = function(event, context, callback) {
       },
     })
     .then(response => {
+      console.log(response)
+
+      const data = _.sortBy(
+        response.data.filter(
+          it => it.fork === false && it.stargazers_count > 0
+        ),
+        it => -Date.parse(it.pushed_at)
+      ).map(it => ({
+        name: it.name,
+        description: it.description,
+        url: it.url,
+        language: it.language,
+        stars: it.stargazers_count,
+        last_updated: it.pushed_at,
+      }))
+
       callback(null, {
         statusCode: response.status,
-        body: response.data,
+        body: JSON.stringify(data),
+      })
+    })
+    .catch(err => {
+      console.error('Error: ' + err)
+      callback('internal server error', {
+        statusCode: 500,
+        body: 'internal server error',
       })
     })
 }
