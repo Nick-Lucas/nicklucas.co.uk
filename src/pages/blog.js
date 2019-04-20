@@ -1,8 +1,16 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
+import styled from 'styled-components'
 
 import { PostButton } from 'components/blog/PostButton'
 import SEO from 'components/seo'
+
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+
+  padding: 0 1rem;
+`
 
 export default () => {
   return (
@@ -45,7 +53,7 @@ export default () => {
                 `london`,
               ]}
             />
-            {edges.map(PostButton)}
+            <Container>{edges.map(PostButton)}</Container>
           </>
         )
       }}

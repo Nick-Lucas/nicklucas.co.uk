@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 import { CardHeader } from './Card'
 
 export const GlobalStyle = createGlobalStyle`
+
 html {
   font-family: 'Source Sans Pro';
   font-weight: 500;

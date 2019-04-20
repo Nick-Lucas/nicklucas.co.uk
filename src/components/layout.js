@@ -16,6 +16,7 @@ import { GlobalStyle } from 'lib/GlobalStyle'
 
 const Page = styled.div`
   display: flex;
+
   align-items: center;
 
   min-height: 100vh;
@@ -27,6 +28,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  box-sizing: border-box;
 
   width: 100%;
   max-width: 50rem;

@@ -11,14 +11,14 @@ const Container = styled.div`
   flex-direction: row;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center;
+
   padding: 0 2rem;
 
   background-color: ${COLORS.WHITE};
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.PALE_WHITE};
-
-  justify-content: center;
 `
 
 const InnerContainer = styled.div`
