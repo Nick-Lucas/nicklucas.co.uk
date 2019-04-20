@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.23",
     "gatsby-image": "^2.0.31",
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^7.12.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
+    "netlify-lambda": "^1.4.5",
     "prettier": "^1.16.4",
     "react-test-renderer": "^16.8.6"
   },
