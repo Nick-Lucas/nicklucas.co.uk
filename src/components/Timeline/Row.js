@@ -13,6 +13,9 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: ${CIRCLE_SIZE * 2}rem auto;
   grid-template-rows: auto auto;
+  ${generateMobileOveride(`
+    grid-template-rows: auto auto auto;
+  `)}
 
   box-sizing: border-box;
 `
@@ -27,7 +30,7 @@ const CircleCell = styled.div`
 
 const LineCell = styled.div`
   grid-column: 1;
-  grid-row: 2 / 4;
+  grid-row: 2 / 99;
 
   display: flex;
   align-items: center;
@@ -37,7 +40,7 @@ const Title1Cell = styled.div`
   grid-column: 2;
   grid-row: 1;
   ${generateMobileOveride(`
-    display: none;
+    grid-column: 2 / 4;
   `)}
 
   display: flex;
@@ -47,29 +50,24 @@ const Title1Cell = styled.div`
 const Title2Cell = styled.div`
   grid-column: 3;
   grid-row: 1;
-  ${generateMobileOveride(`
-    display: none;
-  `)}
 
   display: flex;
   justify-content: center;
   align-items: flex-end;
-`
 
-const TitleMobile = styled.div`
-  grid-column: 2 / 4;
-  grid-row: 1;
   ${generateMobileOveride(`
-    display: flex;
+    grid-column: 2 / 4;
+    grid-row: 2;
+    align-items: flex-start;
   `)}
-
-  display: none;
-  justify-content: center;
 `
 
 const BodyCell = styled.div`
   grid-column: 2 / 4;
-  grid-row: 3;
+  grid-row: 2;
+  ${generateMobileOveride(`
+    grid-row: 3;
+  `)}
 
   display: flex;
   padding-top: 0.5rem;
@@ -169,12 +167,6 @@ export const Row = ({
         <Title2>{title2}</Title2>
         <Title2>{duration}</Title2>
       </Title2Cell>
-
-      <TitleMobile>
-        <Title1>{title1}</Title1>
-        <Title2>{title2}</Title2>
-        <Title2>{duration}</Title2>
-      </TitleMobile>
 
       <BodyCell>
         <BodyWrapper hide={!expanded}>{children}</BodyWrapper>
