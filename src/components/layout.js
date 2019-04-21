@@ -36,7 +36,10 @@ const Body = styled.div`
   padding: 2rem;
   padding-top: 1rem;
 
-  ${generateMobileOveride(`padding: 0.5rem;`)}
+  ${generateMobileOveride(`
+    padding: 0.5rem;
+    padding-top: 1rem;
+  `)}
 `
 
 const Footer = styled.footer`

@@ -10,7 +10,6 @@ export const Timeline = ({ children }) => {
 
     return (
       <>
-        <Spacer size="large" />
         {React.cloneElement(first, {
           hideTopLine: true,
         })}

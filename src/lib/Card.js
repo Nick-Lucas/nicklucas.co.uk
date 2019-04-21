@@ -9,11 +9,11 @@ export const Card = styled.div(({ height }) => {
   return `
     display: flex;
     flex-direction: column;
-    margin: 1rem 0rem;
+    margin-bottom: 1rem;
     padding: 0rem 1rem;
 
     background-color: ${COLORS.WHITE};
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     overflow: hidden;
     ${shadows}
   `

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { COLORS } from 'lib/styles'
+import { COLORS, withAlpha } from 'lib/styles'
 import { Icon } from 'lib/Icon'
 
 const CircleShape = styled.button`
@@ -24,7 +24,12 @@ const CircleShape = styled.button`
   :hover {
     background-color: ${COLORS.OFF_WHITE};
   }
+  :active {
+    background-color: ${withAlpha(COLORS.BLUE, 0.7)};
+  }
   transition: 0.3s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
 
   ${props => `
     min-width: ${props.size}rem;

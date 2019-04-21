@@ -19,6 +19,8 @@ const Container = styled.div`
   border-bottom: solid;
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.PALE_WHITE};
+
+  user-select: none;
 `
 
 const InnerContainer = styled.div`

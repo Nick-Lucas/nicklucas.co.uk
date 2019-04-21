@@ -1,3 +1,5 @@
+import color from 'color'
+
 export const COLORS = {
   DARK: '#272822',
   DARK_TINT: '#49483E',
@@ -33,6 +35,12 @@ export const generateMobileOveride = (styles = ``) => `
     ${styles}
   }
 `
+
+export const withAlpha = (hex, alpha = 0.1) => {
+  return color(hex, 'hex')
+    .alpha(alpha)
+    .string()
+}
 
 export const SHADOWS = {
   LOW: generateShadow({

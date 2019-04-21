@@ -8,8 +8,6 @@ import SEO from 'components/seo'
 const Container = styled.div`
   display: flex;
   flex: 1;
-
-  padding: 0 1rem;
 `
 
 export default () => {

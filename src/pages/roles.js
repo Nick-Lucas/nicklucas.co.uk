@@ -2,15 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Timeline, Row } from 'components/Timeline'
-import { Section } from 'lib/Section'
 
-// const Container = styled(Section)`
-//   padding-left: 1rem;
-// `
-const Container = styled.div`
-  padding: 1rem;
-  padding-left: 0;
-`
+const Container = styled.div``
 
 export default () => {
   return (

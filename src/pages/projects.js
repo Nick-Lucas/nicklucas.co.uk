@@ -12,19 +12,8 @@ import { Clickable } from 'lib/Clickable'
 
 const ENDPOINT = '/.netlify/functions/github-projects'
 
-// {
-//   name: 'giterm',
-//   description:
-//     'Electron/React based git tool, with a terminal at its heart, and all the best parts of a git GUI.',
-//   url: 'https://api.github.com/repos/Nick-Lucas/giterm',
-//   language: 'JavaScript',
-//   stars: 1,
-//   last_updated: '2019-04-03T22:09:04Z',
-// }
-
 const Name = styled.h3`
   margin: 0;
-
   flex: 1;
 
   text-transform: capitalize;

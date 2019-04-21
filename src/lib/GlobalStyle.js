@@ -29,7 +29,7 @@ body {
 h1 {
   font-weight: 500;
   margin: 0;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 
   color: ${COLORS.BLUE};
   border-bottom-style: solid;
@@ -44,7 +44,7 @@ h2 {
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
-  margin-top: 1.3rem;
+  margin-top: 1rem;
 
   border-bottom-style: solid;
   border-bottom-width: 0.1rem;
