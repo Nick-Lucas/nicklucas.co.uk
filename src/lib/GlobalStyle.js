@@ -80,12 +80,12 @@ p {
 
 ul {
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding-inline-start: 1.5rem;
 }
 li {
   margin: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 button {

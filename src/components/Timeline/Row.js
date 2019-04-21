@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import { COLORS, generateMobileOveride } from 'lib/styles'
 import { Spacer } from 'lib/Spacer'
+import { Card } from 'lib/Card'
 
 import { Circle } from './Circle'
 import { datesToDuration, datesToRange, datesToMonths } from './datesToDuration'
@@ -15,6 +16,7 @@ const Container = styled.div`
   grid-template-columns: ${CIRCLE_SIZE * 2}rem auto;
   grid-template-rows: auto auto;
   ${generateMobileOveride(`
+    grid-template-columns: ${CIRCLE_SIZE * 1.2}rem auto;
     grid-template-rows: auto auto auto;
   `)}
 
@@ -27,6 +29,7 @@ const CircleCell = styled.div`
 
   display: flex;
   align-items: center;
+  padding-right: 0.5rem;
 `
 
 const LineCell = styled.div`
@@ -35,6 +38,7 @@ const LineCell = styled.div`
 
   display: flex;
   align-items: center;
+  padding-right: 0.5rem;
 `
 
 const Title1Cell = styled.div`
@@ -110,7 +114,7 @@ const BodyWrapper = styled.div`
   display: flex;
   flex: 1;
 
-  overflow: hidden;
+  overflow: visible;
   transition: max-height 300ms 300ms, opacity 300ms 300ms;
   max-height: 200vh;
 
@@ -122,6 +126,8 @@ const BodyWrapper = styled.div`
       `
     }
   }}
+
+  padding-bottom: 1rem;
 `
 
 export const Row = ({
@@ -173,9 +179,13 @@ export const Row = ({
       </Title2Cell>
 
       <BodyCell>
-        <BodyWrapper hide={!expanded}>{children}</BodyWrapper>
-
-        <Spacer size="large" />
+        <BodyWrapper hide={!expanded}>
+          <Card>
+            <Spacer size="medium" />
+            {children}
+            <Spacer size="medium" />
+          </Card>
+        </BodyWrapper>
       </BodyCell>
     </Container>
   )
