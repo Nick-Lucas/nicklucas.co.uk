@@ -1,17 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 
 import { Card, CardHeader } from 'lib/Card'
-import { Icon } from 'lib/Icon'
+import { Chevron } from 'lib/Chevron'
 import { Row, Col } from 'lib/Flex'
 import { Clickable } from 'lib/Clickable'
 import { Spacer } from 'lib/Spacer'
-
-const Chevron = styled(Icon)`
-  align-self: center;
-  font-size: 1.3rem;
-`
 
 export const PostButton = ({ node }) => {
   const { frontmatter, excerpt } = node
@@ -29,7 +23,7 @@ export const PostButton = ({ node }) => {
             <Spacer size="medium" />
           </Col>
 
-          <Chevron icon="arrow_forward_ios" />
+          <Chevron />
         </Row>
       </Card>
     </Clickable>

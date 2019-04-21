@@ -10,6 +10,12 @@ module.exports = {
   // gh-pages configuration, not required once migrated to full deployment
   pathPrefix: '/nicklucas.co.uk',
 
+  // dev proxy
+  proxy: {
+    prefix: '/.netlify/functions',
+    url: 'http://localhost:9000',
+  },
+
   plugins: [
     // Defaults
     `gatsby-plugin-react-helmet`,
@@ -74,6 +80,9 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+
+    // Netlify configuration
+    `gatsby-plugin-netlify`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
