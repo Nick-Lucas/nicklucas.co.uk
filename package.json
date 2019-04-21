@@ -38,6 +38,7 @@
     "luxon": "^1.12.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.7.0",
