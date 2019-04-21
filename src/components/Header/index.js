@@ -23,6 +23,7 @@ const Container = styled.div`
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.PALE_WHITE};
 
+  -webkit-tap-highlight-color: rgb(0,0,0,0);
   user-select: none;
 `
 
