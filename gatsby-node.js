@@ -4,21 +4,7 @@
 const path = require('path')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage, createRedirect } = actions
-
-  // Add redirects
-  createRedirect({
-    fromPath: `/projects`,
-    isPermanent: true,
-    redirectInBrowser: true,
-    toPath: `https://github.com/Nick-Lucas/`,
-  })
-  createRedirect({
-    fromPath: `/roles`,
-    isPermanent: true,
-    redirectInBrowser: true,
-    toPath: `https://www.linkedin.com/in/nicholasjlucas/`,
-  })
+  const { createPage } = actions
 
   // Transform blog posts
   const BlogPostTemplate = path.resolve(`src/templates/BlogPost.js`)
