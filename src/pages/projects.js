@@ -43,20 +43,26 @@ export default () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    if (loading || data.length) {
+    if (loading || data.length || loadFailed) {
       return
     }
 
     setLoading(true)
-    axios.get(ENDPOINT).then(response => {
-      if (response.status === 200) {
-        setData(response.data)
-        setLoading(false)
-      } else {
+    axios
+      .get(ENDPOINT)
+      .then(response => {
+        if (response.status === 200) {
+          setData(response.data)
+          setLoading(false)
+        } else {
+          setLoadFailed(true)
+          setLoading(false)
+        }
+      })
+      .catch(() => {
         setLoadFailed(true)
         setLoading(false)
-      }
-    })
+      })
   })
 
   if (loading) {
