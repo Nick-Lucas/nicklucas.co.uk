@@ -13,7 +13,10 @@ const Container = styled.div`
   box-sizing: border-box;
   justify-content: center;
 
-  padding: 0 2rem;
+  padding: 0 1rem;
+  ${generateMobileOveride(`
+    padding: 0 0.5rem;
+  `)}
 
   background-color: ${COLORS.WHITE};
   border-bottom: solid;

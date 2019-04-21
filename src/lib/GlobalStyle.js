@@ -9,7 +9,7 @@ html {
   font-weight: 500;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: ${COLORS.WHITE}
+  background-color: ${THEME.BACKGROUND}
 
   ${SHADOWS.LOW}
 }
