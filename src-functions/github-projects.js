@@ -45,7 +45,7 @@ exports.handler = function(event, context, callback) {
         it => -Date.parse(it.pushed_at)
       ).map(it => ({
         name: it.name,
-        fullname = it.full_name,
+        fullname: it.full_name,
         description: it.description,
         url: it.html_url,
         language: it.language,
