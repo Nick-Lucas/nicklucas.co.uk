@@ -93,7 +93,7 @@ const Line = styled.div`
 `
 
 const Title1 = styled.h2`
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   border-bottom-style: none;
 

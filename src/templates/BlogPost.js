@@ -30,7 +30,6 @@ const Template = ({ data }) => {
 
       <Section>
         <HtmlAst htmlAst={htmlAst} />
-        <Spacer size="large" />
       </Section>
     </>
   )

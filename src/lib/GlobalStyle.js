@@ -101,6 +101,10 @@ li {
   margin-top: 0.5rem;
 }
 
+blockquote {
+  text-align: center;
+}
+
 button {
   font-size: 1rem;
   cursor: pointer;
