@@ -60,7 +60,12 @@ export const Item = ({ label, url, icon, current }) => {
 
   if (url.startsWith('http')) {
     return (
-      <StyledA target="_blank" href={url} current={current}>
+      <StyledA
+        target="_blank"
+        rel="noopener noreferrer"
+        href={url}
+        current={current}
+      >
         {body}
       </StyledA>
     )

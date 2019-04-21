@@ -1,4 +1,4 @@
-import { THEME, COLORS, SHADOWS } from './styles'
+import { THEME, COLORS, SHADOWS, generateMobileOveride } from './styles'
 import { createGlobalStyle } from 'styled-components'
 import { CardHeader } from './Card'
 
@@ -29,11 +29,17 @@ body {
 h1 {
   font-weight: 500;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  :first-child {
+    margin-top: 1rem;
+    ${generateMobileOveride(`
+      margin-top: 0.5rem;
+    `)}
+  }
 
   color: ${COLORS.BLUE};
   border-bottom-style: solid;
-  border-bottom-width: 0.1rem;
+  border-bottom-width: 2px;
 
   ${CardHeader} & {
     margin: 0;
@@ -44,10 +50,17 @@ h2 {
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1.3rem;
+  :first-child {
+    margin-top: 1rem;
+    ${generateMobileOveride(`
+      margin-top: 0.5rem;
+    `)}
+  }
 
+  color: ${COLORS.PURPLE};
   border-bottom-style: solid;
-  border-bottom-width: 0.1rem;
+  border-bottom-width: 1px;
 
   ${CardHeader} & {
     margin: 0;

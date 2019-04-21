@@ -24,7 +24,8 @@ module.exports = {
         "no-restricted-imports": [2, { "patterns": ["../*"] }], 
         "no-restricted-modules": [2, { "patterns": ["../*"] }],
         "no-useless-escape": "off",
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "react/no-unescaped-entities": "off"
     },
     globals: {
         __dirname: "readonly",
