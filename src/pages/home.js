@@ -20,15 +20,13 @@ const Home = () => {
       <Section>
         <h1>Welcome!</h1>
 
-        <h4>
-          I'm a full-stack software engineer and passionate problem solver
-        </h4>
+        <h4>I'm a full-stack problem solver</h4>
         <p>
-          I've been building valuable business tools and experiences since 2014,
-          making teams more efficient and effective, and working to create
-          fantastic experiences for the customer. I love making customer's lives
-          better, and working with teams to automate workloads so they can focus
-          on exactly that.
+          As a software engineer, I've been building valuable business tools and
+          experiences since 2014, making teams more efficient and effective, and
+          working to create fantastic experiences for the customer. I love
+          making customer's lives better, and working with teams to automate
+          workloads so they can focus on exactly that.
         </p>
 
         <h2>What have I done?</h2>
@@ -57,27 +55,7 @@ const Home = () => {
 
         <Button to="/projects/">See more projects</Button>
 
-        <h2>What have I learned?</h2>
-        <ul>
-          <li>
-            <strong>Use the right tools:</strong> Technologies should be
-            assessed for the task at hand, and I've worked across a wide range
-            of technologies and disciplines in the pursuit of this belief
-          </li>
-          <li>
-            <strong>Sensible processes with team buy-in:</strong> Processes are
-            there to help a team succeed, they should augment good
-            communication, and the whole team should understand their purpose
-          </li>
-          <li>
-            <strong>Autonomy & trust:</strong> People are smart, and given an
-            understanding of their goals will find ways to reach them. Engineers
-            should be trusted to solve problems, and have the chance to pursue
-            potentially valuable ideas.
-          </li>
-        </ul>
-
-        <Spacer size="large" />
+        <Spacer size="small" />
       </Section>
     </>
   )

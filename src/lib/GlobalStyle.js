@@ -58,7 +58,7 @@ h2 {
     `)}
   }
 
-  color: ${COLORS.PURPLE};
+  color: ${COLORS.BLUE};
   border-bottom-style: solid;
   border-bottom-width: 1px;
 
