@@ -37,7 +37,7 @@ const Home = () => {
           implemented key systems end-to-end such as mobile push notifications.
         </p>
 
-        <Button to="/roles/">See more of my experience</Button>
+        {/* <Button to="/roles/">See more of my experience</Button> */}
 
         <p>
           As a hobbyist, I am a regular OSS contributor, and have built a number
@@ -53,7 +53,7 @@ const Home = () => {
           every day.
         </p>
 
-        <Button to="/projects/">See more projects</Button>
+        {/* <Button to="/projects/">See more projects</Button> */}
 
         <Spacer size="small" />
       </Section>
