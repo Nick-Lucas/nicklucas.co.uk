@@ -55,7 +55,7 @@ const Home = () => {
 
         {/* <Button to="/projects/">See more projects</Button> */}
 
-        <Spacer size="small" />
+        <Spacer size="large" />
       </Section>
     </>
   )
