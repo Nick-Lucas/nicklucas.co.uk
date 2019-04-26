@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 import { PostButton } from 'components/blog/PostButton'
+import { LayoutMobilePadding } from 'lib/LayoutMobilePadding'
 import SEO from 'components/seo'
 
 const Container = styled.div`
@@ -41,7 +42,7 @@ export default () => {
         const { edges } = data.allMarkdownRemark
 
         return (
-          <>
+          <LayoutMobilePadding>
             <SEO
               title="Blog"
               keywords={[
@@ -52,7 +53,7 @@ export default () => {
               ]}
             />
             <Container>{edges.map(PostButton)}</Container>
-          </>
+          </LayoutMobilePadding>
         )
       }}
     />

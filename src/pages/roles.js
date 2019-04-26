@@ -1,13 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { Timeline, Row } from 'components/Timeline'
-
-const Container = styled.div``
+import { LayoutMobilePadding } from 'lib/LayoutMobilePadding'
 
 export default () => {
   return (
-    <Container>
+    <LayoutMobilePadding>
       <Timeline>
         <Row
           title1="WonderBill"
@@ -116,6 +114,6 @@ export default () => {
           assisting in admin processes and student management.
         </Row>
       </Timeline>
-    </Container>
+    </LayoutMobilePadding>
   )
 }

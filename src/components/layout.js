@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import Transition from './Transition'
@@ -37,7 +30,7 @@ const Body = styled.div`
   padding-top: 1rem;
 
   ${generateMobileOveride(`
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     padding-top: 1rem;
   `)}
 `
@@ -60,8 +53,9 @@ const Layout = ({ children }) => (
       <Footer>
         <p>© {new Date().getFullYear()}, Nick Lucas</p>
         <h5>
-          This site is built with <a href="https://reactjs.org/">React</a> and{' '}
-          <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, it{"'"}s fully open
+          I designed and built site is built with{' '}
+          <a href="https://reactjs.org/">React</a> and{' '}
+          <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, it's fully open
           source{' '}
           <a href="https://github.com/Nick-Lucas/nicklucas.co.uk">on GitHub</a>.
         </h5>

@@ -9,6 +9,7 @@ import { Chevron } from 'lib/Chevron'
 import { Card, CardHeader } from 'lib/Card'
 import { COLORS } from 'lib/styles'
 import { Clickable } from 'lib/Clickable'
+import { LayoutMobilePadding } from 'lib/LayoutMobilePadding'
 
 const ENDPOINT = '/.netlify/functions/github-projects'
 
@@ -26,20 +27,32 @@ const Language = styled.h4`
   font-weight: 500;
 `
 
+let requestPromise = null
 export default () => {
   const [loadFailed, setLoadFailed] = useState(false)
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState([])
 
   useEffect(() => {
-    if (loading || data.length || loadFailed) {
+    let stillMounted = true
+    if (data.length || loadFailed) {
       return
     }
 
+    // effect may be remounted at any point, and only 1 request should be active at a time
+    // store the request statically and only create it when it's not already running
+    if (!requestPromise) {
+      requestPromise = axios.get(ENDPOINT)
+    }
+
     setLoading(true)
-    axios
-      .get(ENDPOINT)
+    requestPromise
       .then(response => {
+        if (!stillMounted) {
+          return
+        }
+
+        requestPromise = null
         if (response.status === 200) {
           setData(response.data)
           setLoading(false)
@@ -49,19 +62,34 @@ export default () => {
         }
       })
       .catch(() => {
+        if (!stillMounted) {
+          return
+        }
+
+        requestPromise = null
         setLoadFailed(true)
         setLoading(false)
       })
+
+    return () => {
+      stillMounted = false
+    }
   })
 
   if (loading) {
-    return <>{[0, 1, 2].map(renderLoader)}</>
+    return (
+      <LayoutMobilePadding>{[0, 1, 2].map(renderLoader)}</LayoutMobilePadding>
+    )
   }
   if (loadFailed) {
-    return <div>Oh no, there was a problem loading this page :(</div>
+    return (
+      <LayoutMobilePadding>
+        Oh no, there was a problem loading this page :(
+      </LayoutMobilePadding>
+    )
   }
 
-  return <>{data.map(renderItem)}</>
+  return <LayoutMobilePadding>{data.map(renderItem)}</LayoutMobilePadding>
 }
 
 const renderItem = item => (

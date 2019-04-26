@@ -31,10 +31,7 @@ h1 {
   margin: 0;
   margin-top: 1.5rem;
   :first-child {
-    margin-top: 1rem;
-    ${generateMobileOveride(`
-      margin-top: 0.5rem;
-    `)}
+    margin-top: 0rem;
   }
 
   color: ${COLORS.BLUE};
@@ -89,6 +86,12 @@ h5 {
 p {
   margin: 0;
   margin-top: 1rem;
+}
+a {
+  color: ${COLORS.BLUE};
+  :visited {
+    color: ${COLORS.PURPLE};
+  }
 }
 
 ul {

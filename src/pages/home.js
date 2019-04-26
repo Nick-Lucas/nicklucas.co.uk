@@ -21,15 +21,14 @@ const Home = () => {
         <h1>Welcome!</h1>
 
         <h4>I'm a full-stack problem solver</h4>
+
         <p>
-          As a software engineer, I've been building valuable business tools and
-          experiences since 2014, making teams more efficient and effective, and
-          working to create fantastic experiences for the customer. I love
-          making customer's lives better, and working with teams to automate
-          workloads so they can focus on exactly that.
+          As a software engineer, I'm experienced in architecting and building
+          within greenfield and brownfield environments. I believe in choosing
+          the right tools for the job, making decisions with data, and
+          automating to let teams focus on what's most important.
         </p>
 
-        <h2>What have I done?</h2>
         <p>
           Professionally I've worked on internal tooling for data entry and data
           analysis, as well as full-stack mobile development for consumers. I've
@@ -37,10 +36,8 @@ const Home = () => {
           implemented key systems end-to-end such as mobile push notifications.
         </p>
 
-        {/* <Button to="/roles/">See more of my experience</Button> */}
-
         <p>
-          As a hobbyist, I am a regular OSS contributor, and have built a number
+          As a hobbyist, I'm a regular OSS contributor, and have built a number
           of open source solutions from scratch. For instance{' '}
           <a
             href="https://github.com/Nick-Lucas/giterm"
@@ -49,13 +46,9 @@ const Home = () => {
           >
             giterm
           </a>
-          , a git terminal with built in GUI-like visualisation; a tool I use
+          , a git terminal with built in GUI-like visualisation, which I use
           every day.
         </p>
-
-        {/* <Button to="/projects/">See more projects</Button> */}
-
-        <Spacer size="large" />
       </Section>
     </>
   )

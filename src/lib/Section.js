@@ -9,9 +9,9 @@ export const Section = styled.div`
 
   margin: 0 auto;
   margin-bottom: 1rem;
-  padding: 0 1.5rem;
+  padding: 1rem;
   ${generateMobileOveride(`
-    padding: 0 1rem;
+    padding: 1rem;
   `)}
 
   background-color: ${COLORS.WHITE};
