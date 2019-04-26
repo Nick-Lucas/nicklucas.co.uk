@@ -50,7 +50,7 @@ const Home = () => {
         </p>
       </Section>
 
-      <Section>
+      <Section padding={1}>
         <SocialStrip />
       </Section>
     </>
