@@ -31,7 +31,7 @@ h1 {
   margin: 0;
   margin-top: 1.5rem;
   :first-child {
-    margin-top: 0rem;
+    margin-top: -0.6rem;
   }
 
   color: ${COLORS.BLUE};
@@ -106,6 +106,12 @@ li {
 
 blockquote {
   text-align: center;
+  :first-child {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 button {

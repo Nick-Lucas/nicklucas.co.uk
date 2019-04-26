@@ -49,7 +49,7 @@ export const SHADOWS = {
   }),
   MEDIUM: generateShadow({
     distance: 4,
-    blur: 10,
+    blur: 5,
   }),
   HIGH: generateShadow({
     distance: 6,
