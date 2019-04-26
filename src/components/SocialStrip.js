@@ -24,6 +24,7 @@ const Item = styled.div`
   :hover {
     background-color: ${COLORS.OFF_WHITE};
   }
+  transition: background-color 0.3s;
 `
 
 const Label = styled.p`

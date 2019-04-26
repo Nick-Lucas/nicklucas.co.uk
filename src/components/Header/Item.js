@@ -17,11 +17,11 @@ const StyledLink = styled(({ current, ...rest }) => <Link {...rest} />)`
   text-decoration: none;
 
   :hover {
-    background: ${COLORS.OFF_WHITE};
-    transition: 0.3s;
+    background-color: ${COLORS.OFF_WHITE};
   }
+  transition: background-color 0.3s;
 
-  ${({ current }) => current && `background: ${COLORS.OFF_WHITE};`}
+  ${({ current }) => current && `background-color: ${COLORS.OFF_WHITE};`}
 `
 StyledLink.propTypes = linkProps
 
