@@ -21,7 +21,7 @@ const StyledA = styled.a`
 `
 
 export const Clickable = ({ to, ...props }) => {
-  if (to.startsWith('http')) {
+  if (to.startsWith('http') || to.startsWith('mailto')) {
     return (
       <StyledA {...props} href={to} target="_blank" rel="noopener noreferrer" />
     )

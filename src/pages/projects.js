@@ -17,7 +17,7 @@ const Name = styled.h3`
   margin: 0;
   flex: 1;
 
-  text-transform: capitalize;
+  text-transform: lowercase;
 `
 
 const Language = styled.h4`

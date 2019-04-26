@@ -1,6 +1,6 @@
 // import React from 'react'
 import styled from 'styled-components'
-import { SHADOWS, COLORS, generateMobileOveride } from './styles'
+import { SHADOWS, COLORS } from './styles'
 
 export const Section = styled.div`
   display: flex;
@@ -10,9 +10,6 @@ export const Section = styled.div`
   margin: 0 auto;
   margin-bottom: 1rem;
   padding: 1rem;
-  ${generateMobileOveride(`
-    padding: 1rem;
-  `)}
 
   background-color: ${COLORS.WHITE};
   ${SHADOWS.LOW}

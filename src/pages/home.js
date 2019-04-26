@@ -2,8 +2,7 @@ import React from 'react'
 
 import SEO from 'components/seo'
 import { Section } from 'lib/Section'
-import { Spacer } from 'lib/Spacer'
-import { Button } from 'lib/Button'
+import { SocialStrip } from 'components/SocialStrip'
 
 const Home = () => {
   return (
@@ -49,6 +48,10 @@ const Home = () => {
           , a git terminal with built in GUI-like visualisation, which I use
           every day.
         </p>
+      </Section>
+
+      <Section>
+        <SocialStrip />
       </Section>
     </>
   )

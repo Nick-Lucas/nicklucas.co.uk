@@ -108,6 +108,7 @@ const Title2 = styled.h4`
 
   color: ${COLORS.GREY};
   font-weight: 500;
+  text-align: right;
 `
 
 const BodyWrapper = styled.div`
