@@ -23,11 +23,11 @@ const generateShadow = ({
   distance = 2,
   blur = 5,
   spread = 0,
-  colour = '#999999',
+  colour = withAlpha(COLORS.GREY, 0.5),
 }) => `
-  -webkit-box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
-  -moz-box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
-  box-shadow: ${distance}px ${distance}px ${blur}px ${spread}px ${colour};
+  -webkit-box-shadow: ${0}px ${distance}px ${blur}px ${spread}px ${colour};
+  -moz-box-shadow: ${0}px ${distance}px ${blur}px ${spread}px ${colour};
+  box-shadow: ${0}px ${distance}px ${blur}px ${spread}px ${colour};
 `
 
 export const generateMobileOveride = (styles = ``) => `
