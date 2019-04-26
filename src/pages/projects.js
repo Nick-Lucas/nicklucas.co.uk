@@ -27,7 +27,6 @@ const Language = styled.h4`
   font-weight: 500;
 `
 
-let requestPromise = null
 export default () => {
   const [loadFailed, setLoadFailed] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -39,20 +38,14 @@ export default () => {
       return
     }
 
-    // effect may be remounted at any point, and only 1 request should be active at a time
-    // store the request statically and only create it when it's not already running
-    if (!requestPromise) {
-      requestPromise = axios.get(ENDPOINT)
-    }
-
     setLoading(true)
-    requestPromise
+    axios
+      .get(ENDPOINT)
       .then(response => {
         if (!stillMounted) {
           return
         }
 
-        requestPromise = null
         if (response.status === 200) {
           setData(response.data)
           setLoading(false)
@@ -66,7 +59,6 @@ export default () => {
           return
         }
 
-        requestPromise = null
         setLoadFailed(true)
         setLoading(false)
       })
@@ -74,7 +66,7 @@ export default () => {
     return () => {
       stillMounted = false
     }
-  })
+  }, [])
 
   if (loading) {
     return (
