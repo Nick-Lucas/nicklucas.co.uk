@@ -46,6 +46,7 @@ h1 {
 h2 {
   font-size: 1.3rem;
   font-weight: 500;
+
   margin: 0;
   margin-top: 1.3rem;
   :first-child {
@@ -76,6 +77,8 @@ h3 {
   }
 }
 h4 {
+  line-height: 1.5rem;
+  
   margin: 0;
   margin-top: 1rem;
 }
