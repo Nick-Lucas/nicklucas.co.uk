@@ -23,7 +23,7 @@ Card.propTypes = {
   height: PropTypes.oneOf(['LOW', 'MEDIUM', 'HIGH']),
 }
 Card.defaultProps = {
-  height: 'MEDIUM',
+  height: 'LOW',
 }
 
 export const CardHeader = styled.div`
