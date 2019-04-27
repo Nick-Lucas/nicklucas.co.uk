@@ -13,7 +13,7 @@ const CIRCLE_SIZE = 2
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: ${CIRCLE_SIZE * 2}rem auto;
+  grid-template-columns: ${CIRCLE_SIZE * 2}rem auto 16rem;
   grid-template-rows: auto auto;
   ${generateMobileOveride(`
     grid-template-columns: ${CIRCLE_SIZE * 1.2}rem auto;
