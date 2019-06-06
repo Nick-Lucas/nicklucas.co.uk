@@ -15,7 +15,7 @@ export const COLORS = {
 }
 
 export const THEME = {
-  BACKGROUND: COLORS.OFF_WHITE,
+  BACKGROUND: COLORS.WHITE,
   FONT: COLORS.DARK_TINT,
 }
 

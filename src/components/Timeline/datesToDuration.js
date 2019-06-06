@@ -21,9 +21,13 @@ export const datesToMonths = (dateFrom = '2018-01', dateTo = '2018-02') => {
   return months
 }
 
-export const datesToRange = (dateFrom, dateTo) => {
+export const datesToRange = (dateFrom, dateTo, current) => {
   const to = DateTime.fromISO(dateTo)
   const from = DateTime.fromISO(dateFrom)
+
+  if (current) {
+    return `${from.monthShort} ${from.year} - Now`
+  }
 
   return `${from.monthShort} ${from.year} - ${to.monthShort} ${to.year}`
 }

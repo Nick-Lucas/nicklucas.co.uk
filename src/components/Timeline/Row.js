@@ -4,10 +4,9 @@ import styled from 'styled-components'
 
 import { COLORS, generateMobileOveride } from 'lib/styles'
 import { Spacer } from 'lib/Spacer'
-import { Card } from 'lib/Card'
 
 import { Circle } from './Circle'
-import { datesToDuration, datesToRange, datesToMonths } from './datesToDuration'
+import { datesToRange, datesToMonths } from './datesToDuration'
 
 const CIRCLE_SIZE = 2
 
@@ -99,6 +98,14 @@ const Title1 = styled.h2`
 
   color: ${COLORS.BLUE};
   font-weight: 700;
+  ${({ noEmphasis = false }) => {
+    if (noEmphasis) {
+      return `
+        color: ${COLORS.GREY};
+        font-weight: 500;
+      `
+    }
+  }}
 `
 
 const Title2 = styled.h4`
@@ -139,17 +146,21 @@ export const Row = ({
   hideTopLine,
   dateFrom,
   dateTo,
+  current,
+  noEmphasis,
 }) => {
   const [expanded, setExpanded] = useState(true)
 
-  const duration = useMemo(() => datesToRange(dateFrom, dateTo), [
+  const duration = useMemo(() => datesToRange(dateFrom, dateTo, current), [
     dateFrom,
     dateTo,
+    current,
   ])
 
   const range = useMemo(() => datesToMonths(dateFrom, dateTo), [
     dateFrom,
     dateTo,
+    current,
   ])
 
   return (
@@ -169,23 +180,21 @@ export const Row = ({
       </LineCell>
 
       <Title1Cell>
-        <Title1>{title1}</Title1>
+        <Title1 noEmphasis={noEmphasis}>{title1}</Title1>
       </Title1Cell>
 
       <Title2Cell>
         <Title2>{title2}</Title2>
         <Title2>
-          {duration} ({range})
+          {duration} {current || `(${range})`}
         </Title2>
       </Title2Cell>
 
       <BodyCell>
         <BodyWrapper hide={!expanded}>
-          <Card>
-            <Spacer size="medium" />
-            {children}
-            <Spacer size="medium" />
-          </Card>
+          <Spacer size="medium" />
+          {children}
+          <Spacer size="medium" />
         </BodyWrapper>
       </BodyCell>
     </Container>
@@ -200,9 +209,13 @@ Row.propTypes = {
   hideTopLine: PropTypes.bool,
   dateFrom: PropTypes.string.isRequired,
   dateTo: PropTypes.string.isRequired,
+  current: PropTypes.bool,
+  noEmphasis: PropTypes.bool,
 }
 
 Row.defaultProps = {
   hideLine: false,
   hideTopLine: false,
+  current: false,
+  noEmphasis: false,
 }

@@ -8,6 +8,21 @@ export default () => {
     <LayoutMobilePadding>
       <Timeline>
         <Row
+          title1="Dissertation Research"
+          title2=""
+          dateFrom="2019-03"
+          current
+          noEmphasis
+        >
+          Currently taking a break from work to focus on my MSc Computer Science
+          Dissertation, aiming to rejoin the workforce in July/August 2019.
+          <br />
+          <br />
+          This project is comprised of a series of outcome-prediction deep
+          learning networks, assessed by predicting wins within the General
+          Video Game AI framework.
+        </Row>
+        <Row
           title1="WonderBill"
           title2="Software Engineer"
           dateFrom="2018-01"
@@ -18,7 +33,7 @@ export default () => {
           <h4>Key projects:</h4>
           <ul>
             <li> Architected and built out push notifications end-to-end</li>
-            <li> Maintained React Native installation and upgrades</li>
+            <li> Managed React Native upgrades</li>
             <li>
               Supported and trained junior team members in all areas of the tech
               stack
@@ -28,15 +43,14 @@ export default () => {
               flow
             </li>
             <li>
-              A key driver of sensible processes & automation to manage team
-              problems
+              A key driver of agile & lean processes and process automation
             </li>
           </ul>
           {/*  */}
           <h4>Key technologies:</h4>
           <ul>
-            <li> React, Redux, RXJS, Thunks, Firebase</li>
-            <li> React Native, iOS & Android</li>
+            <li>React, Redux, RXJS, Thunks, Flux pattern</li>
+            <li>React Native, iOS & Android, Firebase</li>
             <li> ES6+</li>
             <li> Ruby, Rails 5, Sidekiq</li>
             <li> Go</li>
@@ -50,29 +64,20 @@ export default () => {
           dateFrom="2015-03"
           dateTo="2017-12"
         >
-          Full stack engineer building out tooling, data management, business
-          intelligence, and the company's core product.
-          {/*  */}
-          <h4>Roles:</h4>
-          <ul>
-            <li>
-              Supported a 10-strong team of data researchers driving one of the
-              most sophisticated online price calculation engines in the world
-            </li>
-            <li>
-              Developer of the company's pricing system and supply side product.
-            </li>
-          </ul>
+          Full-stack engineer building out tooling, data management, business
+          intelligence, and the company's core product. Supported tooling for
+          the data team, driving one of the most sophisticated online price
+          calculation engines in the world.
           {/*  */}
           <h4>Key projects:</h4>
           <ul>
             <li>
-              Architect & sole developer on a data test suite and business logic
+              Architect & lead engineer on a data test suite and business logic
               modelling tool to check data entry correctness
             </li>
             <li>
-              Architect & sole developer on project management tools used to
-              track the progress of data research
+              Architect & lead engineer on in-house project management
+              integrations with Jira
             </li>
             <li>
               Built out data warehousing to track progress of milestones and
@@ -84,34 +89,24 @@ export default () => {
           {/*  */}
           <h4>Key technologies:</h4>
           <ul>
-            <li> .NET & .NET Core, WPF, ASP.NET Core</li>
+            <li> .NET & .NET Core, ASP.NET Core</li>
             <li> React, Typescript, Webpack</li>
             <li> Docker, Systemd, Git</li>
             <li> MySQL</li>
             <li> Ruby & Ruby on Rails</li>
-            <li> MS Access & VBA</li>
+            <li> WPF, VSTO, MS Access & VBA</li>
           </ul>
         </Row>
         <Row
           title1="Squared Online (Google / HLC Partnership)"
           title2="Assistant Product Coordinator"
-          dateFrom="2015-01"
+          dateFrom="2014-08"
           dateTo="2015-06"
         >
           Developed a number of tools to solve administrative and reporting
-          problems, and worked with the wider team to help improve processes and
+          problems. Worked with the wider team to help improve processes and
           delivery. Maintained & automated reports on business performance and
           to provide insight into the state of course delivery.
-        </Row>
-        <Row
-          title1="Squared Online (Google / HLC Partnership)"
-          title2="Support Coordinator"
-          dateFrom="2014-08"
-          dateTo="2015-01"
-        >
-          Student support and running of the day to day course, class
-          facilitation. Developed the company's reporting system and tools for
-          assisting in admin processes and student management.
         </Row>
       </Timeline>
     </LayoutMobilePadding>
