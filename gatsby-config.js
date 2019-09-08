@@ -48,6 +48,16 @@ module.exports = {
         },
         plugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 1000,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -78,7 +88,6 @@ module.exports = {
               // If you wish to only show line numbers on certain code blocks,
               // leave false and use the {numberLines: true} syntax below
               showLineNumbers: true,
-              numberLines: true,
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
               noInlineHighlight: false,

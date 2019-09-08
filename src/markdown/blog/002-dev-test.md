@@ -63,7 +63,25 @@ MyComponent.propTypes = {}
 
 ### VS Code configuration
 
-<!-- Stuff -->
+Creating a snippets file is quick.
+
+#### 1. Bring up the commands list (CMD+Shift+P/Ctrl+Shift+P) and search for "Configure User Snippets" 
+
+You can use this command whenever you want to create or edit an existing snippets file.
+
+![Create1](./002/create-1.png)
+
+#### 2. From here you can create a file which is global for your machine, current workspace, or a particular language
+
+Global & language snippets sit in your computer's VS Code configuration, but snippets created for your workspace are stored in its `.vscode` directory and can be committed to source control... Your team can benefit from this work!
+
+Here we select the global option.
+
+![Create2](./002/create-2.png)
+
+#### 3. Once created you'll be displayed a default file, which contains the core documentation
+
+![Create3](./002/create-3.png)
 
 ### Creating the snippet
 
