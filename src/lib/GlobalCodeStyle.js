@@ -193,7 +193,7 @@ const PrismLineNumbersStyle = css`
 
     /* width: 3em; works for line-numbers below 1000 lines */
     letter-spacing: -1px;
-    border-right: 1px solid ${COLORS.DARK_TINT};
+    border-right: 1px solid ${COLORS.PALE_WHITE};
 
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -201,7 +201,7 @@ const PrismLineNumbersStyle = css`
     user-select: none;
 
     padding: 0;
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
   }
 
   .line-numbers-rows > span {
@@ -214,22 +214,19 @@ const PrismLineNumbersStyle = css`
 
   .line-numbers-rows > span:before {
     content: counter(linenumber);
-    color: ${COLORS.DARK_TINT};
+    color: ${COLORS.GREY};
     display: block;
     padding-right: 0.8em;
     text-align: right;
   }
 
   .gatsby-highlight {
-    /* background-color: #fdf6e3; */
     border-radius: 0.3em;
-    /* margin: 0.5em 0; */
-    /* padding: 1em; */
     overflow: auto;
   }
 
   .gatsby-highlight pre[class*='language-'].line-numbers {
-    padding: 1rem;
+    padding: 1em;
     overflow: initial;
   }
 `

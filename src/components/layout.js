@@ -53,7 +53,7 @@ const Layout = ({ children }) => (
       <Footer>
         <p>© {new Date().getFullYear()}, Nick Lucas</p>
         <h5>
-          I designed and built this site with{' '}
+          This site is designed and built with{' '}
           <a href="https://reactjs.org/">React</a> and{' '}
           <a href="https://www.gatsbyjs.org/">GatsbyJS</a>, it's fully open
           source{' '}
