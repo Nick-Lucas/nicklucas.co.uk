@@ -41,10 +41,8 @@ const MonokaiTheme = css`
   }
 
   :not(pre) > code[class*='language-'] {
-    padding: 0.15em 0.2em 0.05em;
+    padding: 0.1rem 0.3rem;
     border-radius: 0.3em;
-    border: 0.13em solid ${COLORS.GREY};
-    box-shadow: 1px 1px 0.3em -0.1em #000 inset;
   }
   .token.namespace {
     opacity: 0.7;
@@ -178,12 +176,11 @@ const PrismLineNumbersStyle = css`
     flex-direction: row-reverse;
     justify-content: flex-end;
 
-    padding-left: 3.8em;
     counter-reset: linenumber;
   }
 
   pre[class*='language-'].line-numbers > code {
-    position: relative;
+    flex: 1 0 auto;
     white-space: inherit;
   }
 
@@ -228,6 +225,7 @@ const PrismLineNumbersStyle = css`
   .gatsby-highlight pre[class*='language-'].line-numbers {
     padding: 1em;
     overflow: initial;
+    min-width: max-content;
   }
 `
 

@@ -49,7 +49,7 @@ h2 {
   font-weight: 500;
 
   margin: 0;
-  margin-top: 1.3rem;
+  margin-top: 2rem;
   :first-child {
     margin-top: 1rem;
     ${generateMobileOveride(`
@@ -70,7 +70,7 @@ h3 {
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   ${CardHeader} & {
     margin: 0;
@@ -81,7 +81,7 @@ h4 {
   line-height: 1.5rem;
   
   margin: 0;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 h5 {
   margin: 0;
