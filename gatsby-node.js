@@ -24,23 +24,30 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+  `)
+    .then(result => {
+      if (result.errors) {
+        return Promise.reject(result.errors)
+      }
 
-    console.log(
-      'Found',
-      result.data.allMarkdownRemark.edges.length,
-      'blog posts:',
-      JSON.stringify(result.data.allMarkdownRemark.edges)
-    )
+      console.log(
+        'Found',
+        result.data.allMarkdownRemark.edges.length,
+        'blog posts:',
+        JSON.stringify(result.data.allMarkdownRemark.edges)
+      )
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: BlogPostTemplate,
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        if (!node.frontmatter || !node.frontmatter.path) {
+          console.log('No path provided for node: ', node)
+          return
+        }
+
+        createPage({
+          path: node.frontmatter.path,
+          component: BlogPostTemplate,
+        })
       })
     })
-  })
+    .catch(e => console.error('Error:', e))
 }

@@ -1,6 +1,7 @@
 import { THEME, COLORS, SHADOWS, generateMobileOveride } from './styles'
 import { createGlobalStyle } from 'styled-components'
 import { CardHeader } from './Card'
+import { GlobalCodeStyle } from './GlobalCodeStyle'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -121,4 +122,6 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
+
+${GlobalCodeStyle}
 `
