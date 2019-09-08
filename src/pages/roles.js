@@ -8,14 +8,22 @@ export default () => {
     <LayoutMobilePadding>
       <Timeline>
         <Row
+          title1="QualisFlow"
+          title2="Software Engineer (Frontend Lead)"
+          dateFrom="2019-07"
+          current
+        >
+          Full stack engineer, taking ownership of the frontend product and
+          working to build out the core platform.
+        </Row>
+        <Row
           title1="Dissertation Research"
           title2=""
           dateFrom="2019-03"
-          current
+          dateTo="2019-07"
           noEmphasis
         >
-          Currently taking a break from work to focus on my MSc Computer Science
-          Dissertation, aiming to rejoin the workforce in July/August 2019.
+          Break from work to complete my MSc Computer Science Dissertation
           <br />
           <br />
           This project is comprised of a series of outcome-prediction deep
