@@ -1,8 +1,9 @@
 import { css } from 'styled-components'
+import { COLORS, THEME } from './styles'
 
 // Adapted from
 // https://github.com/PrismJS/prism-themes/blob/master/themes/prism-xonokai.css
-export const GlobalCodeStyle = css`
+const MonokaiTheme = css`
   code[class*='language-'],
   pre[class*='language-'] {
     -moz-tab-size: 2;
@@ -17,17 +18,17 @@ export const GlobalCodeStyle = css`
     word-wrap: normal;
     font-family: Menlo, Monaco, 'Courier New', monospace;
     font-size: 14px;
-    color: #76d9e6;
+    color: ${THEME.FONT};
     text-shadow: none;
   }
   pre[class*='language-'],
   :not(pre) > code[class*='language-'] {
-    background: #2a2a2a;
+    background: ${THEME.BACKGROUND_CODE};
   }
   pre[class*='language-'] {
     padding: 15px;
     border-radius: 4px;
-    border: 1px solid #e1e1e8;
+    border: 1px solid ${COLORS.OFF_WHITE};
     overflow: auto;
   }
 
@@ -42,7 +43,7 @@ export const GlobalCodeStyle = css`
   :not(pre) > code[class*='language-'] {
     padding: 0.15em 0.2em 0.05em;
     border-radius: 0.3em;
-    border: 0.13em solid #7a6652;
+    border: 0.13em solid ${COLORS.GREY};
     box-shadow: 1px 1px 0.3em -0.1em #000 inset;
   }
   .token.namespace {
@@ -52,41 +53,43 @@ export const GlobalCodeStyle = css`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: #6f705e;
+    color: ${COLORS.GREY};
   }
-  .token.operator,
+  .token.operator {
+    color: ${THEME.FONT};
+  }
   .token.boolean,
   .token.number {
-    color: #a77afe;
+    color: ${COLORS.PURPLE};
   }
   .token.attr-name,
   .token.string {
-    color: #e6d06c;
+    color: ${COLORS.YELLOW};
   }
   .token.entity,
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: #e6d06c;
+    color: ${COLORS.YELLOW};
   }
   .token.selector,
   .token.inserted {
-    color: #a6e22d;
+    color: ${COLORS.GREEN};
   }
   .token.atrule,
   .token.attr-value,
   .token.keyword,
   .token.important,
   .token.deleted {
-    color: #ef3b7d;
+    color: ${COLORS.RED_DARK};
   }
   .token.regex,
   .token.statement {
-    color: #76d9e6;
+    color: ${COLORS.BLUE};
   }
   .token.placeholder,
   .token.variable {
-    color: #fff;
+    color: ${THEME.FONT};
   }
   .token.important,
   .token.statement,
@@ -94,7 +97,7 @@ export const GlobalCodeStyle = css`
     font-weight: bold;
   }
   .token.punctuation {
-    color: #bebec5;
+    color: ${COLORS.GREY};
   }
   .token.entity {
     cursor: help;
@@ -104,23 +107,26 @@ export const GlobalCodeStyle = css`
   }
 
   code.language-markup {
-    color: #f9f9f9;
+    color: ${COLORS.OFF_WHITE};
   }
   code.language-markup .token.tag {
-    color: #ef3b7d;
+    color: ${COLORS.RED_DARK};
+  }
+  .token.tag {
+    color: ${COLORS.RED_DARK};
   }
   code.language-markup .token.attr-name {
-    color: #a6e22d;
+    color: ${COLORS.GREEN};
   }
   code.language-markup .token.attr-value {
-    color: #e6d06c;
+    color: ${COLORS.YELLOW};
   }
   code.language-markup .token.style,
   code.language-markup .token.script {
-    color: #76d9e6;
+    color: ${COLORS.BLUE};
   }
   code.language-markup .token.script .token.keyword {
-    color: #76d9e6;
+    color: ${COLORS.BLUE};
   }
 
   /* Line highlight plugin */
@@ -162,4 +168,73 @@ export const GlobalCodeStyle = css`
     top: auto;
     bottom: 0.4em;
   }
+`
+
+// Adapted from
+// prismjs/plugins/line-numbers/prism-line-numbers.css
+const PrismLineNumbersStyle = css`
+  pre[class*='language-'].line-numbers {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+  }
+
+  pre[class*='language-'].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+  }
+
+  .line-numbers .line-numbers-rows {
+    pointer-events: none;
+    font-size: 100%;
+
+    /* width: 3em; works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid ${COLORS.DARK_TINT};
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    padding: 0;
+    margin-right: 0.5rem;
+  }
+
+  .line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+
+    flex: 0;
+  }
+
+  .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: ${COLORS.DARK_TINT};
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
+
+  .gatsby-highlight {
+    /* background-color: #fdf6e3; */
+    border-radius: 0.3em;
+    /* margin: 0.5em 0; */
+    /* padding: 1em; */
+    overflow: auto;
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding: 1rem;
+    overflow: initial;
+  }
+`
+
+export const GlobalCodeStyle = css`
+  ${MonokaiTheme}
+  ${PrismLineNumbersStyle}
 `

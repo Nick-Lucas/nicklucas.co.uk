@@ -11,6 +11,137 @@ Snippets are great, blah blah blah, but until recently I thought creating my own
 
 Wrong! Snippets are really easy to make, and very well documented.
 
-```js
+```jsx
 const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+const a = 'b'
+
+const MyFunc = () => {
+  return <div>
+    Hello world
+  </div>
+}
 ```

@@ -12,10 +12,12 @@ export const COLORS = {
   RED: '#f9065f',
   RED_DARK: '#960050',
   YELLOW: '#c3b322',
+  GREEN: '#a6e22d',
 }
 
 export const THEME = {
   BACKGROUND: COLORS.WHITE,
+  BACKGROUND_CODE: COLORS.OFF_WHITE,
   FONT: COLORS.DARK_TINT,
 }
 
